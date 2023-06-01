@@ -6,7 +6,8 @@ interface ContainerProps {
 }
 
 export const Container: FC<ContainerProps> = ({ children, className }) => {
-  return (
-    <div className={`${className} border max-w-7xl mx-auto`}>{children}</div>
-  );
+  const tailWindClasses = className
+    ? `${className} border max-w-8xl mx-auto px-6`
+    : `border max-w-8xl mx-auto px-6`;
+  return <div className={tailWindClasses}>{children}</div>;
 };
