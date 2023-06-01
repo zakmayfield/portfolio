@@ -1,8 +1,8 @@
 export default function ContactPage() {
   return (
     <main>
-      <div>
-        <h1>Contact Page</h1>
+      <div className='text-center'>
+        <h1 className='font-extralight text-3xl'>Contact Page</h1>
       </div>
     </main>
   );

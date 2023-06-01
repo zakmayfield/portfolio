@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export const Container: FC<ContainerProps> = ({ children, className }) => {
   const tailWindClasses = className
-    ? `${className} border max-w-8xl mx-auto px-6`
-    : `border max-w-8xl mx-auto px-6`;
+    ? `${className} max-w-8xl mx-auto px-6`
+    : `max-w-8xl mx-auto px-6`;
   return <div className={tailWindClasses}>{children}</div>;
 };
