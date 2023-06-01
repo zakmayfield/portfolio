@@ -6,7 +6,7 @@ export interface NavItemProps {
   title: string;
 }
 
-export const NavItem: FC<NavItemProps> = ({ slug, title }) => {
+export const NavbarItem: FC<NavItemProps> = ({ slug, title }) => {
   return (
     <li>
       <Link href={`/${slug}`} className='px-6 py-2'>

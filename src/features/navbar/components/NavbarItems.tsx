@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NavItem, NavItemProps } from './NavItem';
+import { NavbarItem, NavItemProps } from './NavbarItem';
 
 interface NavbarItemsProps {}
 
@@ -19,12 +19,12 @@ const navigationItems: NavigationItems = [
   },
 ];
 
-const NavbarItems: FC<NavbarItemsProps> = ({}) => {
+export const NavbarItems: FC<NavbarItemsProps> = ({}) => {
   return (
     <div className='hidden md:flex items-center gap-12'>
       <ul className='flex gap-3'>
         {navigationItems.map((item) => (
-          <NavItem key={item.slug} slug={item.slug} title={item.title} />
+          <NavbarItem key={item.slug} slug={item.slug} title={item.title} />
         ))}
       </ul>
 
@@ -32,5 +32,3 @@ const NavbarItems: FC<NavbarItemsProps> = ({}) => {
     </div>
   );
 };
-
-export default NavbarItems;

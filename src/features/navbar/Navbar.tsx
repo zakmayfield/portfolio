@@ -1,9 +1,8 @@
 'use client';
 
 import { FC, useState } from 'react';
-import { MobileNavbarButton } from './MobileNavbarButton';
-import { NavbarLogo } from './NavbarLogo';
-import NavbarItems from './NavbarItems';
+import { MobileNavbarButton } from './components/MobileNavbarButton';
+import { NavbarItems, NavbarLogo } from './components';
 
 interface NavbarProps {}
 
@@ -12,11 +11,13 @@ export const Navbar: FC<NavbarProps> = ({}) => {
 
   return (
     <nav className='px-6 py-4 flex justify-between bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-100'>
+      {/* renders on all media queries */}
       <NavbarLogo />
 
-      {/* mobile & tablet navbar button */}
+      {/* render menu button @ mobile and tablet */}
       <MobileNavbarButton />
-      {/* desktop navbar <ul> */}
+
+      {/* render <ul> && theme switch @ desktop */}
       <NavbarItems />
     </nav>
   );
