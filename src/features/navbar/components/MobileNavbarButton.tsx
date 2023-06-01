@@ -1,12 +1,16 @@
 import { FC } from 'react';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
-interface MobileNavbarButtonProps {}
+interface MobileNavbarButtonProps {
+  toggleMenu: () => void;
+}
 
-export const MobileNavbarButton: FC<MobileNavbarButtonProps> = ({}) => {
+export const MobileNavbarButton: FC<MobileNavbarButtonProps> = ({
+  toggleMenu,
+}) => {
   return (
-    <div className='md:hidden flex items-center'>
+    <button className='md:hidden flex items-center' onClick={toggleMenu}>
       <HiOutlineMenuAlt3 className='text-3xl' />
-    </div>
+    </button>
   );
 };
