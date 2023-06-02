@@ -6,12 +6,12 @@ interface NavbarSocialIconsProps {}
 export const NavbarSocialIcons: FC<NavbarSocialIconsProps> = ({}) => {
   return (
     <div className='hidden md:flex items-center gap-6 flex-1'>
-      <div>
+      <a href='https://github.com/zakmayfield' target='_blank'>
         <BsGithub />
-      </div>
-      <div>
+      </a>
+      <a href='https://www.linkedin.com/in/zacharymayfield/' target='_blank'>
         <BsLinkedin />
-      </div>
+      </a>
     </div>
   );
 };

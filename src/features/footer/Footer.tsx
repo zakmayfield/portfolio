@@ -4,8 +4,8 @@ interface FooterProps {}
 
 export const Footer: FC<FooterProps> = ({}) => {
   return (
-    <footer>
-      <a href='/'>Home</a>
+    <footer className='flex justify-center items-center'>
+      <h3>footer</h3>
     </footer>
   );
 };

@@ -23,9 +23,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-        <Navbar />
-        <Container>{children}</Container>
-        <Footer />
+        {/* global container // TODO - replace <div> with <Container {className} />  */}
+        <div className='max-w-9xl mx-auto'>
+          <Navbar />
+          <Container>{children}</Container>
+          <Footer />
+        </div>
       </body>
     </html>
   );
