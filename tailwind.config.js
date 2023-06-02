@@ -7,6 +7,9 @@ module.exports = {
         '8xl': '88rem',
         '9xl': '96rem',
       },
+      fontFamily: {
+        sans: ['var(--font-bungee-shade)'],
+      },
     },
   },
   plugins: [],

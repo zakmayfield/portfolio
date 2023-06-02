@@ -9,7 +9,7 @@ export interface NavItemProps {
 export const NavbarItem: FC<NavItemProps> = ({ slug, title }) => {
   return (
     <li>
-      <Link href={`/${slug}`} className='px-6 py-2'>
+      <Link href={`/${slug}`} className='px-4 py-2 text-sm'>
         {title}
       </Link>
     </li>

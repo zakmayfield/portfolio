@@ -2,7 +2,12 @@
 
 import { FC, useState } from 'react';
 import { MobileNavbarButton } from './components/MobileNavbarButton';
-import { NavbarItems, NavbarLogo, Drawer } from './components';
+import {
+  NavbarItems,
+  NavbarLogo,
+  Drawer,
+  NavbarSocialIcons,
+} from './components';
 
 interface NavbarProps {}
 
@@ -17,6 +22,9 @@ export const Navbar: FC<NavbarProps> = ({}) => {
   return (
     <nav className='px-6 py-4 bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-100'>
       <div className='flex justify-between'>
+        {/* renders icons @ desktop */}
+        <NavbarSocialIcons />
+
         {/* renders on all media queries */}
         <NavbarLogo />
 
