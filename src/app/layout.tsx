@@ -1,8 +1,8 @@
 import { Navbar, Footer } from '@/features';
-import {  ContentContainer } from '@/shared/components';
+import { ContentContainer } from '@/shared/components';
 
 import './globals.css';
-import { Inter, Bungee_Shade, Content } from 'next/font/google';
+import { Inter, Bungee_Shade } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 const bungeeShade = Bungee_Shade({
@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Navbar />
-        <ContentContainer className='border'>{children}</ContentContainer>
+        <ContentContainer className='border min-h-screen'>
+          {children}
+        </ContentContainer>
         <Footer />
       </body>
     </html>

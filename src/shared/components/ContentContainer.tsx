@@ -10,7 +10,7 @@ export const ContentContainer: FC<ContentContainerProps> = ({
   className,
 }) => {
   const tailWindClasses = className
-    ? `max-w-8xl mx-auto px-6 ${className}`
+    ? ` ${className} max-w-8xl mx-auto px-6`
     : `max-w-8xl mx-auto px-6`;
   return <div className={tailWindClasses}>{children}</div>;
 };

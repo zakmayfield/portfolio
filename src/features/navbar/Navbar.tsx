@@ -21,8 +21,8 @@ export const Navbar: FC<NavbarProps> = ({}) => {
   };
 
   return (
-    <nav className=' border px-6 py-4 bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-100'>
-      <ContentContainer className='max-w-9xl mx-auto border'>
+    <nav className=' bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-100'>
+      <ContentContainer className='max-w-9xl py-3'>
         <div className='flex justify-between'>
           {/* renders icons @ desktop */}
           <NavbarSocialIcons />
