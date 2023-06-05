@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Zachary Mayfield | Contact',
+};
+
 export default function ContactPage() {
   return (
     <main>

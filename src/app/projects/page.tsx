@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Zachary Mayfield | Projects',
+};
+
 export default function ProjectsPage() {
   return (
     <main>

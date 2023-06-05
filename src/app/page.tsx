@@ -1,9 +1,9 @@
+import { Home } from '@/features/home';
+
+export const metadata = {
+  title: 'Zachary Mayfield | Home',
+};
+
 export default function HomePage() {
-  return (
-    <main>
-      <div className='text-left'>
-        <h1 className='font-extralight text-3xl'>Home Page</h1>
-      </div>
-    </main>
-  );
+  return <Home />;
 }
