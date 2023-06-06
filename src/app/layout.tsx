@@ -12,7 +12,7 @@ const bungeeShade = Bungee_Shade({
 });
 
 export const metadata = {
-  title: 'Zachary Mayfield | Portfolio',
+  title: 'Portfolio | Zachary Mayfield',
 };
 
 export default function RootLayout({

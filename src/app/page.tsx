@@ -1,7 +1,7 @@
 import { Home } from '@/features/home';
 
 export const metadata = {
-  title: 'Zachary Mayfield | Home',
+  title: 'Home | Zachary Mayfield',
 };
 
 export default function HomePage() {

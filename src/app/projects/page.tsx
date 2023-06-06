@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Zachary Mayfield | Projects',
+  title: 'Projects | Zachary Mayfield',
 };
 
 export default function ProjectsPage() {
