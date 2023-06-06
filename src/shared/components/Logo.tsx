@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { Bungee_Shade } from 'next/font/google';
+import { twMerge } from 'tailwind-merge';
 
 interface LogoProps {
   className?: string;
@@ -13,8 +14,11 @@ const bungeeShade = Bungee_Shade({
 });
 
 export const Logo: FC<LogoProps> = ({ className }) => {
+  const defaultStyles = `text-6xl`;
+  const merged = twMerge(defaultStyles, className);
+
   return (
-    <Link href='/' className='text-6xl' style={bungeeShade.style}>
+    <Link href='/' className={merged} style={bungeeShade.style}>
       ZM
     </Link>
   );

@@ -10,12 +10,12 @@ export const Footer: FC<FooterProps> = ({}) => {
       <ContentContainer className='flex justify-between items-center h-[150px] px-6'>
         <FooterLogo />
 
-        <div>
+        <div className='flex-1 text-center'>
           <p>social link</p>
           <p>social link</p>
         </div>
 
-        <div>
+        <div className='flex-1 text-right'>
           <p>link</p>
           <p>link</p>
           <p>link</p>
