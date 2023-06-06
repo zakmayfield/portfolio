@@ -1,24 +1,9 @@
 import { FC } from 'react';
-import { NavbarItem, NavItemProps } from './NavbarItem';
+import { NavbarItem } from './NavbarItem';
 import { BsFillSunFill } from 'react-icons/bs';
+import { navigationItems } from '@/shared/constants';
 
 interface NavbarItemsProps {}
-
-type NavigationItems = NavItemProps[];
-const navigationItems: NavigationItems = [
-  {
-    slug: '',
-    title: 'Home',
-  },
-  {
-    slug: 'projects',
-    title: 'Projects',
-  },
-  {
-    slug: 'contact',
-    title: 'Contact',
-  },
-];
 
 export const NavbarItems: FC<NavbarItemsProps> = ({}) => {
   return (

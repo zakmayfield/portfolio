@@ -1,23 +1,8 @@
 import { FC } from 'react';
-import Link from 'next/link';
-import { Inter, Bungee_Shade } from 'next/font/google';
+import { Logo } from '@/shared/components';
 
 interface NavbarLogoProps {}
 
-const bungeeShade = Bungee_Shade({
-  weight: '400',
-  variable: '--font-bungee-shade',
-  subsets: ['latin'],
-});
-
 export const NavbarLogo: FC<NavbarLogoProps> = ({}) => {
-  return (
-    <Link
-      href='/'
-      className='text-6xl flex-1 text-center ml-8 md:ml-0'
-      style={bungeeShade.style}
-    >
-      ZM
-    </Link>
-  );
+  return <Logo className='text-6xl flex-1 text-center ml-8 md:ml-0' />;
 };

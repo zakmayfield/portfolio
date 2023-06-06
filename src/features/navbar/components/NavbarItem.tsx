@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 
-export interface NavItemProps {
+interface NavItemProps {
   slug: string;
   title: string;
 }
