@@ -6,10 +6,10 @@ export const Intro: FC<IntroProps> = ({}) => {
   return (
     <div className='flex-col'>
       <div className=''>
-        <h3 className='text-2xl'>Thanks for stopping by</h3>
+        <h3 className='text-2xl md:text-4xl'>Thanks for stopping by</h3>
       </div>
 
-      <div className='mb-6 mt-8'>
+      <div className='mb-6 mt-8 leading-relaxed tracking-wide'>
         <p>
           My name is Zachary, I’m a US/Canada based front end{' '}
           <Bolden>TypeScript</Bolden> developer, with a knowledge of{' '}
@@ -18,7 +18,7 @@ export const Intro: FC<IntroProps> = ({}) => {
         </p>
       </div>
 
-      <div>
+      <div className='leading-relaxed tracking-wide'>
         <p>
           I’ve worked on projects with tech such as <Bolden>TypeScript</Bolden>,
           <Bolden>React</Bolden>, (Next.js/Remix), <Bolden>Express</Bolden>, and
