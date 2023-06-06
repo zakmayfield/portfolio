@@ -28,7 +28,7 @@ const projects = [
 
 function ProjectsContainer() {
   return (
-    <div className='flex h-[350px]'>
+    <div className='flex flex-col md:flex-row h-[100vh] md:h-[350px]'>
       {projects.map((project) => (
         <ProjectSquare key={project.id} name={project.name} />
       ))}
@@ -37,5 +37,7 @@ function ProjectsContainer() {
 }
 
 function ProjectSquare({ name }: { name: string }) {
-  return <div className='flex flex-1 justify-center items-center border'>{name}</div>;
+  return (
+    <div className='flex flex-1 justify-center items-center border'>{name}</div>
+  );
 }
