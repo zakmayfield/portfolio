@@ -4,7 +4,7 @@ interface IntroProps {}
 
 export const Intro: FC<IntroProps> = ({}) => {
   return (
-    <div className='flex-col'>
+    <div className='flex-col max-w-[65ch] mx-auto'>
       <div className=''>
         <h3 className='text-2xl md:text-4xl'>Thanks for stopping by</h3>
       </div>
