@@ -4,7 +4,7 @@ interface HeroProps {}
 
 export const Hero: FC<HeroProps> = ({}) => {
   return (
-    <div className='px-6 h-[75vh] md:h-[450px] flex items-center border-4'>
+    <div className='px-6 h-[75vh] md:h-[450px] flex items-center border'>
       <HeroContent />
     </div>
   );
