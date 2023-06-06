@@ -8,7 +8,7 @@ export const Home: FC<HomeProps> = ({}) => {
   return (
     <main>
       <Hero />
-      <ContentContainer className='px-6 py-6'>
+      <ContentContainer className='px-6 mt-6 md:mt-12 border md:max-w-4xl'>
         <Intro />
       </ContentContainer>
     </main>
