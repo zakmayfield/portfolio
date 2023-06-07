@@ -1,6 +1,6 @@
 import { ContentContainer } from '@/shared/components';
 import { FC } from 'react';
-import { FooterLogo } from './components';
+import { FooterLogo, FooterSocialLinks } from './components';
 
 interface FooterProps {}
 
@@ -9,11 +9,7 @@ export const Footer: FC<FooterProps> = ({}) => {
     <footer className='border'>
       <ContentContainer className='flex justify-between items-center h-[150px] px-6'>
         <FooterLogo />
-
-        <div className='flex-1 text-center'>
-          <p>social link</p>
-          <p>social link</p>
-        </div>
+        <FooterSocialLinks />
 
         <div className='flex-1 text-right'>
           <p>link</p>

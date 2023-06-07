@@ -6,7 +6,7 @@ import {
   NavbarItems,
   NavbarLogo,
   Drawer,
-  NavbarSocialIcons,
+  NavbarSocialLinks,
 } from './components';
 import { ContentContainer } from '@/shared/components';
 
@@ -25,7 +25,7 @@ export const Navbar: FC<NavbarProps> = ({}) => {
       <ContentContainer className='max-w-9xl py-6 px-6'>
         <div className='flex justify-between'>
           {/* renders icons @ desktop */}
-          <NavbarSocialIcons />
+          <NavbarSocialLinks />
 
           {/* renders on all media queries */}
           <NavbarLogo />
