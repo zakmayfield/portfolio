@@ -1,16 +1,16 @@
 import { FC } from 'react';
-import { NavbarItem } from './NavbarItem';
 import { BsFillSunFill } from 'react-icons/bs';
 import { navigationItems } from '@/shared/constants';
+import { NavLink } from '@/shared/components';
 
-interface NavbarItemsProps {}
+interface NavbarLinksProps {}
 
-export const NavbarItems: FC<NavbarItemsProps> = ({}) => {
+export const NavbarLinks: FC<NavbarLinksProps> = ({}) => {
   return (
     <div className='hidden md:flex items-center justify-end gap-12 flex-1'>
       <ul className='flex gap-3'>
         {navigationItems.map((item) => (
-          <NavbarItem key={item.slug} slug={item.slug} title={item.title} />
+          <NavLink key={item.slug} slug={item.slug} title={item.title} />
         ))}
       </ul>
 

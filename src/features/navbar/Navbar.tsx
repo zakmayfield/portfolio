@@ -3,10 +3,10 @@
 import { FC, useState } from 'react';
 import { MobileNavbarButton } from './components/MobileNavbarButton';
 import {
-  NavbarItems,
   NavbarLogo,
   Drawer,
   NavbarSocialLinks,
+  NavbarLinks,
 } from './components';
 import { ContentContainer } from '@/shared/components';
 
@@ -31,7 +31,7 @@ export const Navbar: FC<NavbarProps> = ({}) => {
           <NavbarLogo />
 
           {/* render <ul> && theme switch @ desktop */}
-          <NavbarItems />
+          <NavbarLinks />
 
           {/* render menu button @ mobile and tablet */}
           <MobileNavbarButton toggleMenu={toggleMenu} />

@@ -1,3 +1,3 @@
 export * from './FooterLogo';
-export * from './FooterNavigation';
+export * from './FooterLinks';
 export * from './FooterSocialLinks';
