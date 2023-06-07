@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import type { NavigationItemsType, SocialNavigationItemsType } from '../types';
+import type { NavigationItemsType, SocialNavigationItemsType } from './types';
 
 export const navigationItems: NavigationItemsType = [
   {
