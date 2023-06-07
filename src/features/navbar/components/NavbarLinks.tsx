@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
-import { navigationItems } from '@/shared/constants';
 import { NavLinksGroup } from '@/shared/components';
 
 interface NavbarLinksProps {}

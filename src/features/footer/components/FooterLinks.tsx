@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { navigationItems } from '@/shared/constants';
-import { NavLink, NavLinksGroup } from '@/shared/components';
+import { NavLinksGroup } from '@/shared/components';
 
 interface FooterLinksProps {}
 
