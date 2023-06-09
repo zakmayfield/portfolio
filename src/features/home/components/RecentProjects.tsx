@@ -36,7 +36,7 @@ function ProjectSquare({
   image: StaticImageData;
 }) {
   return (
-    <div className='flex flex-1 justify-center items-center'>
+    <div className='flex flex-1 justify-center items-center cursor-pointer'>
       <FullHeightImage image={image} altText={name} className='md:max-h-72' />
     </div>
   );
