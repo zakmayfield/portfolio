@@ -1,6 +1,14 @@
 import React from 'react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import type { NavigationItemsType, SocialNavigationItemsType } from './types';
+
+import type {
+  NavigationItemsType,
+  SocialNavigationItemsType,
+  ProjectsType,
+} from './types';
+
+import ChasersHome from '@/shared/assets/projects/chasers_home.png';
+import DominosHome from '@/shared/assets/projects/dominos_home.png';
 
 export const navigationItems: NavigationItemsType = [
   {
@@ -27,5 +35,18 @@ export const socialNavigationItems: SocialNavigationItemsType = [
     id: 2,
     link: 'https://www.linkedin.com/in/zacharymayfield/',
     icon: React.createElement(BsLinkedin),
+  },
+];
+
+export const projects: ProjectsType = [
+  {
+    id: 1,
+    name: 'Chasers Juice',
+    image: ChasersHome,
+  },
+  {
+    id: 2,
+    name: 'Dominos',
+    image: DominosHome,
   },
 ];

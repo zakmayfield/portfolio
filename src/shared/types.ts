@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 import { IconType } from 'react-icons';
 
@@ -12,5 +13,12 @@ export type SocialNavigationItemType = {
   icon: JSX.Element;
 };
 
+export type Project = {
+  id: number;
+  name: string;
+  image: StaticImageData;
+};
+
 export type SocialNavigationItemsType = SocialNavigationItemType[];
 export type NavigationItemsType = NavItemType[];
+export type ProjectsType = Project[];
