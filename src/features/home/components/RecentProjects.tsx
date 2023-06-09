@@ -37,7 +37,7 @@ function ProjectSquare({
 }) {
   return (
     <div className='flex flex-1 justify-center items-center'>
-      <FullHeightImage image={image} altText={name} className='max-h-96' />
+      <FullHeightImage image={image} altText={name} className='md:max-h-72' />
     </div>
   );
 }
