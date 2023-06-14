@@ -8,12 +8,14 @@ interface LogoProps {
 }
 
 export const Logo: FC<LogoProps> = ({ className }) => {
-  const defaultStyles = `text-6xl`;
+  const defaultStyles = `text-6xl font-bungee`;
   const merged = twMerge(defaultStyles, className);
 
   return (
-    <Link href='/' className={merged} style={bungeeShade.style}>
-      ZM
-    </Link>
+    <div className={bungeeShade.variable}>
+      <Link href='/' className={merged}>
+        ZM
+      </Link>
+    </div>
   );
 };
