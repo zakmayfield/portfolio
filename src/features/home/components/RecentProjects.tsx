@@ -1,6 +1,7 @@
 'use client';
 import { ContentContainer, FullHeightImage } from '@/shared/components';
 import { FC, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '@/shared/constants';
 import { StaticImageData } from 'next/image';
 
@@ -49,11 +50,21 @@ function ProjectSquare({
         altText={name}
         className='md:max-h-72 md:rounded-md'
       />
-      {isHovered && (
-        <div className='absolute inset-0 md:max-h-72 md:rounded-md flex items-center justify-center bg-black bg-opacity-80'>
-          <p className='text-white text-2xl tracking-wide font-thin'>{name}</p>
-        </div>
-      )}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className='absolute inset-0 md:max-h-72 md:rounded-md flex items-center justify-center bg-black bg-opacity-70'
+          >
+            <p className='text-white text-2xl tracking-wide font-thin'>
+              {name}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
