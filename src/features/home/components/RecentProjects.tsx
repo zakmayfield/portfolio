@@ -1,5 +1,6 @@
+'use client';
 import { ContentContainer, FullHeightImage } from '@/shared/components';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { projects } from '@/shared/constants';
 import { StaticImageData } from 'next/image';
 
@@ -35,9 +36,24 @@ function ProjectSquare({
   name: string;
   image: StaticImageData;
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className='flex flex-1 justify-center items-center cursor-pointer'>
-      <FullHeightImage image={image} altText={name} className='md:max-h-72' />
+    <div
+      className='relative flex flex-1 justify-center items-center cursor-pointer overflow-hidden'
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <FullHeightImage
+        image={image}
+        altText={name}
+        className='md:max-h-72 md:rounded-md'
+      />
+      {isHovered && (
+        <div className='absolute inset-0 md:max-h-72 md:rounded-md flex items-center justify-center bg-black bg-opacity-80'>
+          <p className='text-white text-2xl tracking-wide font-thin'>{name}</p>
+        </div>
+      )}
     </div>
   );
 }

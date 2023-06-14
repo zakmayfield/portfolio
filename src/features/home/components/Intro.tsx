@@ -23,13 +23,12 @@ export const Intro: FC<IntroProps> = ({}) => {
         <div className='leading-relaxed tracking-wide md:px-6'>
           <p>
             I have worked on projects with tech such as{' '}
-            <Bolden>TypeScript</Bolden>, <Bolden>React</Bolden>,
-            (Next.js/Remix), <Bolden>Express</Bolden>, and{' '}
-            <Bolden>CSS-in-JS</Bolden> libraries. I’m familiar with{' '}
-            <Bolden>RESTful & GraphQL</Bolden> server architecture & I prefer
-            working with relational databases like <Bolden>Postgres</Bolden>, I
-            enjoy working with ORMs like <Bolden>Prisma</Bolden> to help ease
-            the pain of SQL.
+            <Bolden>TypeScript</Bolden>, <Bolden>React</Bolden> (Next.js/Remix),{' '}
+            <Bolden>Express</Bolden>, and <Bolden>CSS-in-JS</Bolden> libraries.
+            Im familiar with <Bolden>RESTful & GraphQL</Bolden> server
+            architecture & I prefer working with relational databases like{' '}
+            <Bolden>Postgres</Bolden>, I enjoy working with ORMs like{' '}
+            <Bolden>Prisma</Bolden> to help ease the pain of SQL.
           </p>
         </div>
       </div>

@@ -41,7 +41,7 @@ export const socialNavigationItems: SocialNavigationItemsType = [
 export const projects: ProjectsType = [
   {
     id: 1,
-    name: 'Chasers Juice',
+    name: 'Chasers Fresh Juice',
     image: ChasersHome,
   },
   {
