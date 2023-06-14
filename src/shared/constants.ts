@@ -43,10 +43,12 @@ export const projects: ProjectsType = [
     id: 1,
     name: 'Chasers Fresh Juice',
     image: ChasersHome,
+    slug: 'chasers-juice',
   },
   {
     id: 2,
     name: 'Dominos',
     image: DominosHome,
+    slug: 'dominos',
   },
 ];
