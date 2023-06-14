@@ -1,25 +1,21 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { Bungee_Shade } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';
+import { bungeeShade } from '@/app/utils/fonts';
 
 interface LogoProps {
   className?: string;
 }
 
-const bungeeShade = Bungee_Shade({
-  weight: '400',
-  variable: '--font-bungee-shade',
-  subsets: ['latin'],
-});
-
 export const Logo: FC<LogoProps> = ({ className }) => {
-  const defaultStyles = `text-6xl`;
+  const defaultStyles = `text-6xl font-bungee`;
   const merged = twMerge(defaultStyles, className);
 
   return (
-    <Link href='/' className={merged} style={bungeeShade.style}>
-      ZM
-    </Link>
+    <div className={bungeeShade.variable}>
+      <Link href='/' className={merged}>
+        ZM
+      </Link>
+    </div>
   );
 };

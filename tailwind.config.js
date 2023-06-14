@@ -8,7 +8,8 @@ module.exports = {
         '9xl': '96rem',
       },
       fontFamily: {
-        logo: ['var(--font-bungee-shade)'],
+        bungee: ['var(--font-bungee-shade)'],
+        unbounded: ['var(--font-unbounded)'],
       },
     },
   },
