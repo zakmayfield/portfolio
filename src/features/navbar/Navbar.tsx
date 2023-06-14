@@ -16,10 +16,9 @@ export const Navbar: FC<NavbarProps> = ({}) => {
   };
 
   return (
-
     // example of using dark: selector
     // <nav className=' bg-white text-slate-800 dark:bg-slate-800 dark:text-gray-100'>
-    
+
     <nav className=' bg-white text-slate-800 '>
       <ContentContainer className='max-w-9xl py-6 px-6'>
         <div className='flex justify-between'>
