@@ -5,9 +5,9 @@ interface IntroProps {}
 
 export const Intro: FC<IntroProps> = ({}) => {
   return (
-    <ContentContainer className='px-6 my-12 md:mt-28 md:max-w-4xl'>
+    <ContentContainer className='px-6 my-20 md:mt-28 md:max-w-4xl'>
       <div className='flex-col max-w-[65ch] mx-auto'>
-        <div className='md:border-b mb-6 pb-6'>
+        <div className='md:border-b mb-6 md:pb-6'>
           <h3 className='text-3xl md:text-4xl'>Thanks for stopping by</h3>
         </div>
 
