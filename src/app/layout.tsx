@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Navbar />
-        {/* need to make this content container w-full and then adjust each page to use the content container with default width */}
         <ContentContainer className='min-h-screen md:max-w-full'>
           {children}
         </ContentContainer>
