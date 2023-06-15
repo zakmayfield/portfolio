@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.className}`}>
         <Navbar />
-        <ContentContainer className='min-h-screen'>
+        <ContentContainer className='min-h-screen md:max-w-full'>
           {children}
         </ContentContainer>
         <Footer />
