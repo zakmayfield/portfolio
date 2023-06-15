@@ -1,9 +1,10 @@
 'use client';
-import { ContentContainer, FullHeightImage } from '@/shared/components';
 import { FC, useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { projects } from '@/shared/constants';
 import { StaticImageData } from 'next/image';
+import { ContentContainer, FullHeightImage } from '@/shared/components';
+import { projects } from '@/shared/constants';
 
 interface RecentProjectsProps {}
 
@@ -23,8 +24,8 @@ export const RecentProjects: FC<RecentProjectsProps> = ({}) => {
 function ProjectsContainer() {
   return (
     <div className='flex flex-col gap-12 md:gap-6 md:flex-row'>
-      {projects.map(({ id, name, image }) => (
-        <ProjectSquare key={id} name={name} image={image} />
+      {projects.map(({ id, name, image, slug }) => (
+        <ProjectSquare key={id} name={name} image={image} slug={slug} />
       ))}
     </div>
   );
@@ -33,14 +34,17 @@ function ProjectsContainer() {
 function ProjectSquare({
   name,
   image,
+  slug,
 }: {
   name: string;
   image: StaticImageData;
+  slug: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <Link
+      href={`/projects/${slug}`}
       className='relative flex flex-1 justify-center items-center cursor-pointer overflow-hidden'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -65,6 +69,6 @@ function ProjectSquare({
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </Link>
   );
 }
