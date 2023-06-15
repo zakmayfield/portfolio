@@ -5,6 +5,7 @@ interface HeroProps {}
 
 export const Hero: FC<HeroProps> = ({}) => {
   return (
+    // TODO: make 100vh header
     <div className='px-6 h-[50vh] flex items-center bg-slate-100'>
       <ContentContainer className='md:max-w-6xl'>
         <HeroContent />
