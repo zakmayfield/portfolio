@@ -10,9 +10,9 @@ interface RecentProjectsProps {}
 
 export const RecentProjects: FC<RecentProjectsProps> = ({}) => {
   return (
-    <div className='my-6 md:my-28 max-w-6xl mx-auto'>
+    <div className='mb-12 md:my-28 max-w-6xl mx-auto'>
       <ContentContainer className='px-6'>
-        <h3 className='text-2xl md:text-4xl mb-6'>
+        <h3 className='text-2xl md:text-3xl mb-6'>
           Check out my recent projects
         </h3>
         <ProjectsContainer />

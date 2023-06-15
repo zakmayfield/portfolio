@@ -5,13 +5,13 @@ interface IntroProps {}
 
 export const Intro: FC<IntroProps> = ({}) => {
   return (
-    <ContentContainer className='px-6 mt-6 md:mt-28 md:max-w-4xl'>
+    <ContentContainer className='px-6 my-12 md:mt-28 md:max-w-4xl'>
       <div className='flex-col max-w-[65ch] mx-auto'>
-        <div className='border-b pb-6'>
-          <h3 className='text-2xl md:text-4xl'>Thanks for stopping by</h3>
+        <div className='md:border-b mb-6 pb-6'>
+          <h3 className='text-3xl md:text-4xl'>Thanks for stopping by</h3>
         </div>
 
-        <div className='mb-6 mt-8 leading-relaxed tracking-wide md:px-6'>
+        <div className='mb-6 mt-0 leading-relaxed tracking-wide md:px-6'>
           <p>
             My name is Zachary, I am a US/Canada based front end{' '}
             <Bolden>TypeScript</Bolden> developer, with a knowledge of{' '}
