@@ -7,8 +7,8 @@ interface NotFoundProps {}
 
 export const NotFound: FC<NotFoundProps> = ({}) => {
   return (
-    <div className='md:min-h-[100vh]'>
-      <ContentContainer className='md:max-w-3xl p-12 mt-24 rounded-md bg-slate-200'>
+    <div className='md:min-h-[100vh] px-6'>
+      <ContentContainer className='md:max-w-3xl px-6 md:px-12 py-12 mt-24 rounded-md bg-slate-200'>
         <NotFoundContent />
       </ContentContainer>
     </div>
@@ -19,7 +19,7 @@ function NotFoundContent() {
   return (
     <div>
       <div className={`flex flex-col gap-6 ${unbounded.variable}`}>
-        <h1 className='font-bold text-4xl font-unbounded'>
+        <h1 className='font-bold text-3xl md:text-4xl font-unbounded'>
           Lost in Cyberspace?
         </h1>
 
