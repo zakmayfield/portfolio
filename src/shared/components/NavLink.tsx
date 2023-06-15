@@ -9,13 +9,11 @@ interface NavLinkProps {
 }
 
 export const NavLink: FC<NavLinkProps> = ({ slug, title, className }) => {
-  const defaultStyles = ``;
+  const defaultStyles = `px-4 py-2`;
   const merged = twMerge(defaultStyles, className);
   return (
-    <li>
-      <Link href={`/${slug}`} className='px-4 py-2 text-sm'>
-        {title}
-      </Link>
+    <li className={merged}>
+      <Link href={`/${slug}`}>{title}</Link>
     </li>
   );
 };
