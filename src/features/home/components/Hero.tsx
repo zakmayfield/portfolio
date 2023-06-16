@@ -6,8 +6,9 @@ interface HeroProps {}
 export const Hero: FC<HeroProps> = ({}) => {
   return (
     // TODO: make 100vh header
-    <div className='h-[80vh] bg-gradient-to-b from-orange-50 to-white flex items-center'>
-      <ContentContainer className='md:max-w-6xl px-6 md:px-12'>
+    <div className='h-[80vh] bg-gradient-to-b from-blue-100 to-white flex items-center relative overflow-hidden'>
+      <div className='w-[500px] rounded-[3rem] h-[500px] absolute -top-20 bg-white -right-20 rotate-45 z-0' />
+      <ContentContainer className='md:max-w-6xl px-6 md:px-12 relative z-10'>
         <HeroContent />
       </ContentContainer>
     </div>

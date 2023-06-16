@@ -13,7 +13,7 @@ export type SocialNavigationItemType = {
   icon: JSX.Element;
 };
 
-export type Project = {
+export type ProjectType = {
   id: number;
   name: string;
   image: StaticImageData;
@@ -22,4 +22,4 @@ export type Project = {
 
 export type SocialNavigationItemsType = SocialNavigationItemType[];
 export type NavigationItemsType = NavItemType[];
-export type ProjectsType = Project[];
+export type ProjectsType = ProjectType[];
