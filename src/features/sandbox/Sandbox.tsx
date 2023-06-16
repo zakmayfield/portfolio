@@ -1,4 +1,4 @@
-export const Sandbox = async ({}) => {
+export const Sandbox = () => {
   return (
     <div>
       <div className='flex justify-center items-center'>
