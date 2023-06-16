@@ -2,7 +2,7 @@
 import { FC, HTMLAttributes, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/shared/components';
+import { Button, Icons } from '@/shared/components';
 
 // TODO: refactor all components that take a className prop to this syntax + cn util
 // extending this type allows me to pass 'className' to the div without any extra typing
@@ -27,7 +27,9 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({
 
   return (
     <div className={cn('flex justify-center', className)}>
-      <Button onClick={loginWithGoogle}>Sign In with Google</Button>
+      <Button onClick={loginWithGoogle}>
+        {<Icons.google className='h-4 w-4 mr-2' />} Sign In with Google
+      </Button>
     </div>
   );
 };

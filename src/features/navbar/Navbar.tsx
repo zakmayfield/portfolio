@@ -4,7 +4,6 @@ import { FC, useState } from 'react';
 import { MobileNavbarButton } from './components/MobileNavbarButton';
 import { Drawer, NavbarLinks } from './components';
 import { ContentContainer, Logo, SocialLinks } from '@/shared/components';
-import { Button } from '@/shared/components';
 
 interface NavbarProps {}
 
