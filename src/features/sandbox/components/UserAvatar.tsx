@@ -1,5 +1,8 @@
 import { User } from 'next-auth/';
 import { FC } from 'react';
+import { Avatar, AvatarFallback } from './Avatar';
+import Image from 'next/image';
+import { Icons } from '@/shared/components'
 
 interface UserAvatarProps {
   user: Pick<User, 'name' | 'image'>;
@@ -7,5 +10,23 @@ interface UserAvatarProps {
 
 export const UserAvatar: FC<UserAvatarProps> = ({ user }) => {
   console.log(user);
-  return <div>UserAvatar</div>;
+  return (
+    <Avatar>
+      {user.image ? (
+        <div className='relative aspect-square h-full w-full'>
+          <Image
+            fill
+            src={user.image}
+            alt='profile picture'
+            referrerPolicy='no-referrer'
+          />
+        </div>
+      ) : (
+        <AvatarFallback>
+          <span className='sr-only'>{user?.name}</span>
+          <Icons.user />
+        </AvatarFallback>
+      )}
+    </Avatar>
+  );
 };
