@@ -9,7 +9,7 @@ interface SandboxNavProps {
 
 export const SandboxNav: FC<SandboxNavProps> = ({ session }) => {
   return (
-    <div className='flex gap-12 justify-end p-6 bg-gradient-to-r from-blue-50 to-blue-300 '>
+    <div className='flex gap-12 justify-end items-center p-6 bg-gradient-to-r from-blue-50 to-blue-300 '>
       {/* links */}
       <ul className='flex gap-6'>
         <li>
