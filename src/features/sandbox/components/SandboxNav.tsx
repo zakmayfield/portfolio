@@ -1,7 +1,7 @@
 import { Session } from 'next-auth/';
 import Link from 'next/link';
 import { FC } from 'react';
-import { UserAccountNav } from './UserAccountNav';
+import { UserAccountNavItem } from './UserAccountNavItem';
 
 interface SandboxNavProps {
   session?: Session | null;
@@ -23,7 +23,7 @@ export const SandboxNav: FC<SandboxNavProps> = ({ session }) => {
       {/* sign in / avatar */}
       <div>
         {session?.user ? (
-          <UserAccountNav />
+          <UserAccountNavItem user={session?.user} />
         ) : (
           <Link href='/sign-up' className='border-2 rounded-md p-2'>
             Sign In

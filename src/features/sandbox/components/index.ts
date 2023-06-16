@@ -1,2 +1,3 @@
 export * from './SandboxNav';
-export * from './UserAccountNav';
+export * from './UserAvatar';
+export * from './UserAccountNavItem';

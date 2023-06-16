@@ -18,19 +18,6 @@ export default async function SandboxLayout({
     <ContentContainer
       className={`md:max-w-5xl mx-auto rounded-2xl shadow-lg bg-slate-100 overflow-hidden ${unbounded.variable}`}
     >
-      {/* 
-      <div className='flex justify-end p-6 bg-gradient-to-r from-blue-50 to-blue-300 '>
-        <div>
-          {session?.user ? (
-            <UserAccountNav />
-          ) : (
-            <Link href='/sign-up' className='border-2 rounded-md p-2'>
-              Sign In
-            </Link>
-          )}
-        </div>
-      </div> 
-      */}
       <SandboxNav session={session} />
 
       <h1 className='text-center font-unbounded text-2xl my-6'>SANDBOX</h1>
