@@ -27,23 +27,17 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           <div className='p-6'>
             <h3 className='text-xl font-semibold'>Stack</h3>
             <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2 tracking-wide'>
-              <li className='p-2 border-2 rounded-md'>TypeScript</li>
-              <li className='p-2 border-2 rounded-md'>Next.js v13+</li>
-              <li className='p-2 border-2 rounded-md'>Chakra UI</li>
-              <li className='p-2 border-2 rounded-md'>Framer Motion</li>
-              <li className='p-2 border-2 rounded-md'>Node.js</li>
+              {project.stack.map((item) => (
+                <li key={project.id} className='p-2 border-2 rounded-md'>
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className='p-6 indent-2 tracking-wide leading-relaxed text-lg max-w-[75ch] mx-auto'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, nobis
-          et necessitatibus odio delectus fugiat, qui reprehenderit eius est
-          mollitia minima! Animi accusantium suscipit at quod iste consequatur
-          odit! Unde. Similique vel eum numquam mollitia. Repudiandae aut vel
-          voluptate expedita repellat cum aperiam maxime explicabo nam! Natus
-          nobis, molestias nulla est quis explicabo aspernatur eaque odit
-          deleniti doloremque? Ab, debitis.
+          {project.description}
         </div>
         <Button
           className='md:w-48 py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
