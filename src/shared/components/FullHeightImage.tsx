@@ -13,11 +13,15 @@ export const FullHeightImage: FC<FullHeightImageProps> = ({
   altText,
   className,
 }) => {
-  const defaultStyles = `overflow-hidden max-h-80 `;
+  const defaultStyles = ``;
   const merged = twMerge(defaultStyles, className);
   return (
     <div className={merged}>
-      <Image src={image} alt={altText} className='object-cover w-full h-80' />
+      <Image
+        src={image}
+        alt={altText}
+        className='object-cover w-full min-h-80'
+      />
     </div>
   );
 };
