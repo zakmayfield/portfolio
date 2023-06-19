@@ -1,23 +1,28 @@
 import { FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 interface FullHeightImageProps {
   image: StaticImageData;
   altText: string;
   className?: string;
+  rounded?: boolean;
 }
 
 export const FullHeightImage: FC<FullHeightImageProps> = ({
   image,
   altText,
   className,
+  rounded = false,
 }) => {
-  const defaultStyles = `overflow-hidden max-h-80 `;
-  const merged = twMerge(defaultStyles, className);
   return (
-    <div className={merged}>
-      <Image src={image} alt={altText} className='object-cover w-full h-80' />
+    <div className={cn('', className)}>
+      <Image
+        src={image}
+        alt={altText}
+        className={`object-cover h-full ${rounded ? 'rounded-md' : ''}`}
+      />
     </div>
   );
 };

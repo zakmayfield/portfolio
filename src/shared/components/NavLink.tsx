@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 interface NavLinkProps {
   slug: string;
@@ -9,10 +9,8 @@ interface NavLinkProps {
 }
 
 export const NavLink: FC<NavLinkProps> = ({ slug, title, className }) => {
-  const defaultStyles = `px-4 py-2`;
-  const merged = twMerge(defaultStyles, className);
   return (
-    <li className={merged}>
+    <li className={cn('px-4 py-2', className)}>
       <Link href={`/${slug}`}>{title}</Link>
     </li>
   );

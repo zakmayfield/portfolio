@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
 import { socialNavigationItems } from '@/shared/constants';
+import { cn } from '@/lib/utils';
 
 interface SocialLinksProps {
   className?: string;
@@ -13,11 +14,8 @@ export const SocialLinks: FC<SocialLinksProps> = ({
   className,
   hasBg = false,
 }) => {
-  const defaultStyles = `flex items-center gap-6`;
-  const merged = twMerge(defaultStyles, className);
-
   return (
-    <div className={merged}>
+    <div className={cn('flex items-center gap-6', className)}>
       {socialNavigationItems.map(({ id, link, icon }) => (
         <a
           key={id}

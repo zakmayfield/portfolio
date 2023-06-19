@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 interface ContentContainerProps {
   children: ReactNode;
@@ -10,8 +11,7 @@ export const ContentContainer: FC<ContentContainerProps> = ({
   children,
   className,
 }) => {
-  const defaultStyles = `w-full md:max-w-8xl mx-auto`;
-  const merged = twMerge(defaultStyles, className);
-
-  return <div className={merged}>{children}</div>;
+  return (
+    <div className={cn('w-full max-w-8xl mx-auto', className)}>{children}</div>
+  );
 };
