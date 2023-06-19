@@ -13,13 +13,14 @@ export const Project: FC<ProjectProps> = ({ project }) => {
   return (
     <div className='p-6'>
       <ContentContainer className='max-w-4xl flex flex-col gap-6'>
-        <div className='flex flex-col md:flex-row gap-6 border p-6'>
+        <FullHeightImage
+          image={project.image}
+          altText='Chasers Fresh Juice landing page'
+        />
+        {/* <div className='flex flex-col md:flex-row gap-6 border p-6'>
           <div className='flex mx-auto border-4'>
             <div className='md:w-2/3 overflow-hidden rounded-md shadow-lg'>
-              <FullHeightImage
-                image={project.image}
-                altText='Chasers Fresh Juice landing page'
-              />
+             
             </div>
             <div className='p-6 border'>
               <h3 className='text-xl font-semibold'>Stack</h3>
@@ -32,7 +33,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className='p-6 indent-2 tracking-wide leading-relaxed text-lg max-w-[75ch] mx-auto'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, nobis
           et necessitatibus odio delectus fugiat, qui reprehenderit eius est
