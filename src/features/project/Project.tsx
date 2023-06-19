@@ -16,7 +16,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
       <ContentContainer className='max-w-4xl flex flex-col gap-6'>
         <h1 className='text-2xl tracking-wide'>{project.name}</h1>
 
-        <div className='flex flex-col md:flex-row gap-6 justify-center items-center'>
+        <div className='flex flex-col md:flex-row gap-6 justify-center items-start'>
           <FullHeightImage
             image={project.image}
             altText={`${project.name} landing page`}
@@ -26,7 +26,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
 
           <div className='p-6'>
             <h3 className='text-xl font-semibold'>Stack</h3>
-            <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2'>
+            <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2 tracking-wide'>
               <li className='p-2 border-2 rounded-md'>TypeScript</li>
               <li className='p-2 border-2 rounded-md'>Next.js v13+</li>
               <li className='p-2 border-2 rounded-md'>Chakra UI</li>
@@ -46,7 +46,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           deleniti doloremque? Ab, debitis.
         </div>
         <Button
-          className='md:w-48 py-8 md:py-2 mt-6 text-lg md:text-md'
+          className='md:w-48 py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
           onClick={() => router.back()}
         >
           Back
