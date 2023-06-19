@@ -18,6 +18,8 @@ export type ProjectType = {
   name: string;
   image: StaticImageData;
   slug: string;
+  stack: string[];
+  description: string;
 };
 
 export type SocialNavigationItemsType = SocialNavigationItemType[];
