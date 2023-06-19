@@ -17,11 +17,7 @@ export const FullHeightImage: FC<FullHeightImageProps> = ({
   const merged = twMerge(defaultStyles, className);
   return (
     <div className={merged}>
-      <Image
-        src={image}
-        alt={altText}
-        className='object-cover w-full min-h-80'
-      />
+      <Image src={image} alt={altText} className='object-cover w-full' />
     </div>
   );
 };
