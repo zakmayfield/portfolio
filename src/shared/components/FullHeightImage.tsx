@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { twMerge } from 'tailwind-merge';
+import { cn } from '@/lib/utils';
 
 interface FullHeightImageProps {
   image: StaticImageData;
@@ -13,10 +14,8 @@ export const FullHeightImage: FC<FullHeightImageProps> = ({
   altText,
   className,
 }) => {
-  const defaultStyles = ``;
-  const merged = twMerge(defaultStyles, className);
   return (
-    <div className={merged}>
+    <div className={cn('', className)}>
       <Image src={image} alt={altText} className='object-cover w-full' />
     </div>
   );
