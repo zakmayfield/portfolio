@@ -14,13 +14,16 @@ export const Project: FC<ProjectProps> = ({ project }) => {
   return (
     <div className='p-6'>
       <ContentContainer className='max-w-4xl flex flex-col gap-6'>
-        <div className='flex flex-col md:flex-row gap-6 justify-center'>
+        <h1 className='text-2xl tracking-wide'>{project.name}</h1>
+
+        <div className='flex flex-col md:flex-row gap-6 justify-center items-center'>
           <FullHeightImage
             image={project.image}
             altText={`${project.name} landing page`}
-            className='w-full md:w-2/3'
+            className='w-full md:w-2/3 h-[50vh] md:h-auto'
             rounded
           />
+
           <div className='p-6'>
             <h3 className='text-xl font-semibold'>Stack</h3>
             <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2'>
@@ -42,7 +45,10 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           nobis, molestias nulla est quis explicabo aspernatur eaque odit
           deleniti doloremque? Ab, debitis.
         </div>
-        <Button className='w-48 mt-6' onClick={() => router.back()}>
+        <Button
+          className='md:w-48 py-8 md:py-2 mt-6 text-lg md:text-md'
+          onClick={() => router.back()}
+        >
           Back
         </Button>
       </ContentContainer>
