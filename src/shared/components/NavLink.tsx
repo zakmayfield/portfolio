@@ -21,7 +21,7 @@ export const NavLink: FC<NavLinkProps> = ({
     <li className={cn('px-4 py-2', className)}>
       <Link
         href={`/${slug}`}
-        className={`${isActive ? 'text-orange-600' : ''}`}
+        className={`text-lg ${isActive ? 'text-slate-500' : ''}`}
       >
         {title}
       </Link>
