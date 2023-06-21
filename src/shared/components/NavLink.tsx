@@ -6,12 +6,25 @@ interface NavLinkProps {
   slug: string;
   title: string;
   className?: string;
+  pathname: string;
 }
 
-export const NavLink: FC<NavLinkProps> = ({ slug, title, className }) => {
+export const NavLink: FC<NavLinkProps> = ({
+  slug,
+  title,
+  className,
+  pathname,
+}) => {
+  const isActive = pathname.split('/')[1] === slug;
+
   return (
     <li className={cn('px-4 py-2', className)}>
-      <Link href={`/${slug}`}>{title}</Link>
+      <Link
+        href={`/${slug}`}
+        className={`${isActive ? 'text-orange-600' : ''}`}
+      >
+        {title}
+      </Link>
     </li>
   );
 };
