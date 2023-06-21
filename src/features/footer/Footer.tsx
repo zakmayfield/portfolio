@@ -6,7 +6,7 @@ interface FooterProps {}
 
 export const Footer: FC<FooterProps> = ({}) => {
   return (
-    <footer className='border'>
+    <footer>
       <ContentContainer className='flex justify-between items-center h-[150px] px-6'>
         <FooterLogo />
         <SocialLinks hasBg />
