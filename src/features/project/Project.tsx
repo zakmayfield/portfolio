@@ -11,11 +11,8 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@/shared/components/DropdownMenu';
-import { CreditCard, User } from 'lucide-react';
-import Link from 'next/link';
 
 interface ProjectProps {
   project: ProjectType;
@@ -24,7 +21,7 @@ interface ProjectProps {
 export const Project: FC<ProjectProps> = ({ project }) => {
   const router = useRouter();
 
-  function test(item: any) {
+  function navigate(item: ProjectType) {
     router.push(`/projects/${item.slug}`);
   }
 
@@ -37,7 +34,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           <FullHeightImage
             image={project.image}
             altText={`${project.name} landing page`}
-            className='w-full md:w-2/3 h-[50vh] md:h-auto'
+            className='w-full md:w-2/3 h-[50vh] md:h-auto shadow-lg'
             rounded
           />
 
@@ -45,7 +42,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
             <h3 className='text-xl font-semibold'>Stack</h3>
             <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2 tracking-wide'>
               {project.stack.map((item) => (
-                // TODO: ecommerce experience | add challenges to description | add box shadow to project image
+                // TODO: ecommerce experience | add challenges to description
                 <li
                   key={item}
                   className='px-2 py-1 border-2 bg-slate-100 text-slate-500 rounded-md'
@@ -61,24 +58,19 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           {project.description}
         </div>
 
-        <div className='flex justify-between items-center'>
-          <Button
-            className='w-1/3 py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
-            onClick={() => router.back()}
-          >
-            Back
-          </Button>
-
+        <div className='flex justify-end items-center'>
           <DropdownMenu>
             <DropdownMenuTrigger
               asChild
               className='py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
             >
-              <Button variant='outline'>Projects</Button>
+              <Button>Projects</Button>
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent className='w-56'>
-              <DropdownMenuLabel>Select a Project</DropdownMenuLabel>
+            <DropdownMenuContent className='w-80 md:w-56 mr-6 md:mr-0'>
+              <DropdownMenuLabel className='text-lg'>
+                Select a Project
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 {projects.map(
@@ -86,8 +78,8 @@ export const Project: FC<ProjectProps> = ({ project }) => {
                     project.name !== item.name && (
                       <DropdownMenuItem
                         key={item.slug}
-                        className='cursor-pointer'
-                        onClick={() => test(item)}
+                        className='cursor-pointer text-lg'
+                        onClick={() => navigate(item)}
                       >
                         <span>{item.name}</span>
                       </DropdownMenuItem>
