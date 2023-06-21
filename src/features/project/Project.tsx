@@ -59,13 +59,6 @@ export const Project: FC<ProjectProps> = ({ project }) => {
         </div>
 
         <div className='flex justify-end items-center'>
-          {/* <Button
-            className='w-1/3 py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
-            onClick={() => router.back()}
-          >
-            Back
-          </Button> */}
-
           <DropdownMenu>
             <DropdownMenuTrigger
               asChild
