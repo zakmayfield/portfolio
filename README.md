@@ -3,5 +3,5 @@
 ## Stack
 
 * Next.js v13+
-* Tailwind
+* Tailwind & Shadcn/UI library
 * Framer Motion

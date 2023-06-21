@@ -21,7 +21,9 @@ export const FullHeightImage: FC<FullHeightImageProps> = ({
       <Image
         src={image}
         alt={altText}
-        className={`object-cover h-full ${rounded ? 'rounded-md' : ''}`}
+        className={`object-cover h-full object-center ${
+          rounded ? 'rounded-md' : ''
+        }`}
       />
     </div>
   );
