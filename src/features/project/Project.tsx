@@ -58,20 +58,20 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           {project.description}
         </div>
 
-        <div className='flex justify-between items-center'>
-          <Button
+        <div className='flex justify-end items-center'>
+          {/* <Button
             className='w-1/3 py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
             onClick={() => router.back()}
           >
             Back
-          </Button>
+          </Button> */}
 
           <DropdownMenu>
             <DropdownMenuTrigger
               asChild
               className='py-8 md:py-2 mt-6 text-lg md:text-md font-normal'
             >
-              <Button variant='outline'>Projects</Button>
+              <Button>Projects</Button>
             </DropdownMenuTrigger>
 
             <DropdownMenuContent className='w-80 md:w-56 mr-6 md:mr-0'>
