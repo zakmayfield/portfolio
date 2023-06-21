@@ -11,11 +11,8 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@/shared/components/DropdownMenu';
-import { CreditCard, User } from 'lucide-react';
-import Link from 'next/link';
 
 interface ProjectProps {
   project: ProjectType;
@@ -24,7 +21,7 @@ interface ProjectProps {
 export const Project: FC<ProjectProps> = ({ project }) => {
   const router = useRouter();
 
-  function test(item: any) {
+  function navigate(item: ProjectType) {
     router.push(`/projects/${item.slug}`);
   }
 
@@ -77,8 +74,10 @@ export const Project: FC<ProjectProps> = ({ project }) => {
               <Button variant='outline'>Projects</Button>
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent className='w-56'>
-              <DropdownMenuLabel>Select a Project</DropdownMenuLabel>
+            <DropdownMenuContent className='w-80 md:w-56 mr-6 md:mr-0'>
+              <DropdownMenuLabel className='text-lg'>
+                Select a Project
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 {projects.map(
@@ -86,8 +85,8 @@ export const Project: FC<ProjectProps> = ({ project }) => {
                     project.name !== item.name && (
                       <DropdownMenuItem
                         key={item.slug}
-                        className='cursor-pointer'
-                        onClick={() => test(item)}
+                        className='cursor-pointer text-lg'
+                        onClick={() => navigate(item)}
                       >
                         <span>{item.name}</span>
                       </DropdownMenuItem>
