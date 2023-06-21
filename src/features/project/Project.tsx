@@ -37,7 +37,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           <FullHeightImage
             image={project.image}
             altText={`${project.name} landing page`}
-            className='w-full md:w-2/3 h-[50vh] md:h-auto'
+            className='w-full md:w-2/3 h-[50vh] md:h-auto shadow-lg'
             rounded
           />
 
@@ -45,7 +45,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
             <h3 className='text-xl font-semibold'>Stack</h3>
             <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2 tracking-wide'>
               {project.stack.map((item) => (
-                // TODO: ecommerce experience | add challenges to description | add box shadow to project image
+                // TODO: ecommerce experience | add challenges to description
                 <li
                   key={item}
                   className='px-2 py-1 border-2 bg-slate-100 text-slate-500 rounded-md'
