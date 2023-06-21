@@ -23,7 +23,7 @@ export const Navbar: FC<NavbarProps> = ({}) => {
       <ContentContainer className='max-w-9xl py-6 px-6'>
         <div className='flex justify-between'>
           {/* renders social links @ desktop */}
-          <SocialLinks className='hidden md:flex flex-1' />
+          <SocialLinks className='hidden md:flex flex-1 gap-3' hasBg />
           {/* renders logo on all media queries */}
           <Logo className='text-6xl flex-1 text-center ml-8 md:ml-0' />
           {/* render navbar links & theme switch @ desktop */}

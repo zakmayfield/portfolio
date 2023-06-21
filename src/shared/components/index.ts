@@ -1,5 +1,6 @@
 export * from './Button';
 export * from './ContentContainer';
+export * from './FadeIn';
 export * from './FullHeightImage';
 export * from './Icons';
 export * from './NavLink';
