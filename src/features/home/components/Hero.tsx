@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ContentContainer, FullHeightImage } from '@/shared/components';
+import { ContentContainer } from '@/shared/components';
 
 interface HeroProps {}
 
