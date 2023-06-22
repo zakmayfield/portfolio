@@ -14,7 +14,6 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
       { value: formValues.name, label: 'Name', name: 'name' },
       { value: formValues.company, label: 'Company', name: 'company' },
       { value: formValues.email, label: 'Email', name: 'email' },
-      // { value: formValues.message, label: 'Message', name: 'message' },
     ],
     [formValues.name, formValues.company, formValues.email]
   );
@@ -29,9 +28,10 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
           <input
             type='text'
             id={input.name}
-            className='w-full px-3 py-2 border border-gray-300 rounded-lg'
             value={input.value}
+            name={input.name}
             onChange={onChange}
+            className='w-full px-3 py-2 border border-gray-300 rounded-lg'
             required
           />
         </div>
@@ -46,6 +46,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
           className='w-full px-3 py-2 border border-gray-300 rounded-lg'
           value={formValues.message}
           onChange={onChange}
+          name='message'
           required
         />
       </div>

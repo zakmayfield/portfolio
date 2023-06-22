@@ -40,7 +40,7 @@ export const useContactForm = () => {
     event.preventDefault();
     setIsLoading(true);
     // validation
-    console.log('form submitted');
+    console.log('form submitted', formValues);
     setIsLoading(false);
   };
 
