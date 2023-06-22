@@ -26,6 +26,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
             {input.label}
           </label>
           <input
+            disabled
             type='text'
             id={input.name}
             value={input.value}
@@ -42,6 +43,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
           Message
         </label>
         <textarea
+          disabled
           id='message'
           className='w-full px-3 py-2 border border-gray-300 rounded-lg'
           value={formValues.message}
@@ -53,6 +55,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
 
       <div className='mt-10 md:mt-6'>
         <Button
+          disabled
           type='submit'
           variant='outline'
           className='w-full p-6 md:p-4 text-white bg-orange-600 rounded-lg hover:bg-orange-500 hover:text-white focus:outline-none focus:bg-orange-400'
