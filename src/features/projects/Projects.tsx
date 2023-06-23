@@ -15,7 +15,7 @@ export const Projects: FC<ProjectProps> = () => {
       <ContentContainer className='max-w-4xl'>
         <h1 className='text-2xl tracking-wide mb-6'>Projects</h1>
 
-        <div className='px-6 flex flex-col gap-6'>
+        <div className='flex flex-col gap-6'>
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
