@@ -1,19 +1,37 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useState, useEffect, useRef } from 'react';
 import { MobileNavbarButton } from './components/MobileNavbarButton';
 import { Drawer, NavbarLinks } from './components';
 import { ContentContainer, Logo, SocialLinks } from '@/shared/components';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface NavbarProps {}
 
 export const Navbar: FC<NavbarProps> = ({}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const triggerRef = useRef(document.querySelector('mobile-nav-trigger'));
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
-    console.log('toggleMenu', isMenuOpen);
   };
+
+  useEffect(() => {
+    const mobileButton = triggerRef.current;
+
+    const handleClick = () => {
+      setIsMenuOpen((prev) => !prev);
+    };
+
+    window.addEventListener('resize', () => setIsMenuOpen(false));
+
+    mobileButton?.addEventListener('click', handleClick);
+
+    return () => {
+      mobileButton?.removeEventListener('click', handleClick);
+      window.removeEventListener('resize', () => setIsMenuOpen(false));
+    };
+  }, []);
 
   return (
     // example of using dark: selector
