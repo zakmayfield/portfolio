@@ -9,25 +9,25 @@ interface DrawerProps {
 
 export const Drawer: FC<DrawerProps> = ({ isMenuOpen }) => {
   const variants = {
-    open: { height: 'auto' },
-    closed: { height: 0 },
+    open: {
+      height: 'auto',
+      overflow: 'visible',
+    },
+    closed: { height: 0, overflow: 'hidden' },
   };
   return (
-    <div className='text-right'>
-      <AnimatePresence>
-        <motion.ul
-          variants={variants}
-          exit={{ height: 0 }}
-          animate={isMenuOpen ? 'open' : 'closed'}
-          className='flex flex-col gap-3'
-        >
-          {navigationItems.map((item) => (
-            <li key={item.title}>
-              <Link href={item.slug}>{item.title}</Link>
-            </li>
-          ))}
-        </motion.ul>
-      </AnimatePresence>
+    <div className='text-center'>
+      <motion.ul
+        variants={variants}
+        animate={isMenuOpen ? 'open' : 'closed'}
+        className='flex flex-col gap-3 relative'
+      >
+        {navigationItems.map((item, i) => (
+          <li key={item.title} className='last-of-type:pb-6'>
+            <Link href={item.slug}>{item.title}</Link>
+          </li>
+        ))}
+      </motion.ul>
     </div>
   );
 };

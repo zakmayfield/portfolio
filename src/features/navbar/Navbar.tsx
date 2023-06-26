@@ -4,13 +4,13 @@ import { FC, useState, useEffect, useRef } from 'react';
 import { MobileNavbarButton } from './components/MobileNavbarButton';
 import { Drawer, NavbarLinks } from './components';
 import { ContentContainer, Logo, SocialLinks } from '@/shared/components';
-import { AnimatePresence, motion } from 'framer-motion';
 
 interface NavbarProps {}
 
 export const Navbar: FC<NavbarProps> = ({}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const triggerRef = useRef(document.querySelector('mobile-nav-trigger'));
+  console.log(isMenuOpen);
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -43,7 +43,7 @@ export const Navbar: FC<NavbarProps> = ({}) => {
           {/* renders social links @ desktop */}
           <SocialLinks className='hidden md:flex flex-1 gap-3' hasBg />
           {/* renders logo on all media queries */}
-          <Logo className='text-6xl flex-1 text-center ml-8 md:ml-0' />
+          <Logo className='text-6xl flex-1 text-center ml-0 ' />
           {/* render navbar links & theme switch @ desktop */}
           <NavbarLinks />
           {/* render menu button @ mobile and tablet */}
