@@ -13,14 +13,15 @@ export const Drawer: FC<DrawerProps> = ({ isMenuOpen }) => {
       height: 'auto',
       overflow: 'visible',
     },
-    closed: { 
-      height: 0, 
-      overflow: 'hidden' 
+    closed: {
+      height: 0,
+      overflow: 'hidden',
     },
   };
   return (
     <motion.div
       className='text-center'
+      initial={{ overflow: 'hidden', height: 0 }}
       variants={variants}
       animate={isMenuOpen ? 'open' : 'closed'}
     >
