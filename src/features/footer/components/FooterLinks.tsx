@@ -6,7 +6,7 @@ interface FooterLinksProps {}
 export const FooterLinks: FC<FooterLinksProps> = ({}) => {
   return (
     <div className='flex-1'>
-      <NavLinksGroup className='flex-col text-sm md:flex-row items-end justify-end' />
+      <NavLinksGroup className='flex-col md:flex-row items-end justify-end text-sm' />
     </div>
   );
 };

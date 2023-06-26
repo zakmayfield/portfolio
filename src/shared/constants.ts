@@ -60,6 +60,7 @@ export const projects: ProjectsType = [
     image: DominosHome,
     slug: 'dominos',
     stack: ['JavaScript', 'React', 'Storybook'],
-    description: "During my tenure at Dominos, I initially joined as a front end React developer contributing to the ongoing development and maintenance of the Dominos web app. My responsibilities involved maintaining and improving the existing user interfaces. The stack for this project was React and JavaScript",
+    description:
+      'During my tenure at Dominos, I initially joined as a front end React developer contributing to the ongoing development and maintenance of the Dominos web app. My responsibilities involved maintaining and improving the existing user interfaces. The stack for this project was React and JavaScript',
   },
 ];

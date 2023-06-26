@@ -6,12 +6,8 @@ interface NavbarLinksProps {}
 
 export const NavbarLinks: FC<NavbarLinksProps> = ({}) => {
   return (
-    <div className='hidden md:flex items-center justify-end gap-12 flex-1 md:ml-6'>
+    <div className='hidden md:flex items-center justify-end gap-12 flex-1 md:ml-6 text-lg'>
       <NavLinksGroup />
-
-      <div className='text-2xl'>
-        <BsFillSunFill />
-      </div>
     </div>
   );
 };
