@@ -13,21 +13,24 @@ export const Drawer: FC<DrawerProps> = ({ isMenuOpen }) => {
       height: 'auto',
       overflow: 'visible',
     },
-    closed: { height: 0, overflow: 'hidden' },
+    closed: { 
+      height: 0, 
+      overflow: 'hidden' 
+    },
   };
   return (
-    <div className='text-center'>
-      <motion.ul
-        variants={variants}
-        animate={isMenuOpen ? 'open' : 'closed'}
-        className='flex flex-col gap-3 relative'
-      >
+    <motion.div
+      className='text-center'
+      variants={variants}
+      animate={isMenuOpen ? 'open' : 'closed'}
+    >
+      <ul className='flex flex-col gap-3 relative'>
         {navigationItems.map((item, i) => (
           <li key={item.title} className='last-of-type:pb-6'>
             <Link href={item.slug}>{item.title}</Link>
           </li>
         ))}
-      </motion.ul>
-    </div>
+      </ul>
+    </motion.div>
   );
 };

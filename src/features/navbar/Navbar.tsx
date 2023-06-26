@@ -9,8 +9,14 @@ interface NavbarProps {}
 
 export const Navbar: FC<NavbarProps> = ({}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const triggerRef = useRef(document.querySelector('mobile-nav-trigger'));
-  console.log(isMenuOpen);
+
+  let button: HTMLButtonElement | null = null;
+
+  if (typeof document !== 'undefined') {
+    button = document.querySelector('mobile-nav-trigger');
+  }
+
+  const triggerRef = useRef(button);
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,13 +24,11 @@ export const Navbar: FC<NavbarProps> = ({}) => {
 
   useEffect(() => {
     const mobileButton = triggerRef.current;
-
     const handleClick = () => {
       setIsMenuOpen((prev) => !prev);
     };
 
     window.addEventListener('resize', () => setIsMenuOpen(false));
-
     mobileButton?.addEventListener('click', handleClick);
 
     return () => {
