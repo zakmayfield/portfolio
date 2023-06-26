@@ -25,10 +25,12 @@ export const Drawer: FC<DrawerProps> = ({ isMenuOpen }) => {
       variants={variants}
       animate={isMenuOpen ? 'open' : 'closed'}
     >
-      <ul className='flex flex-col gap-3 relative'>
+      <ul className='flex flex-col gap-5 relative'>
         {navigationItems.map((item, i) => (
           <li key={item.title} className='last-of-type:pb-6'>
-            <Link href={item.slug}>{item.title}</Link>
+            <Link href={item.slug} className='text-lg'>
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>
