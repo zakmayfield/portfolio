@@ -21,6 +21,7 @@ export const SocialLinks: FC<SocialLinksProps> = ({
           key={id}
           href={link}
           aria-label='View my social sites'
+          target='_blank'
           className={
             hasBg
               ? `p-3 rounded-md bg-slate-100 hover:bg-slate-200 transition-colors`
