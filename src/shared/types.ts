@@ -20,6 +20,7 @@ export type ProjectType = {
   slug: string;
   stack: string[];
   description: string;
+  url: string;
 };
 
 export type SocialNavigationItemsType = SocialNavigationItemType[];
