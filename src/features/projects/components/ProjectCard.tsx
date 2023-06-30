@@ -14,7 +14,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <FadeIn>
-      <ContentContainer className='max-w-md md:max-w-3xl flex flex-col-reverse md:flex-row justify-between md:items-center border rounded-md p-3 shadow-md'>
+      <ContentContainer className='max-w-md md:max-w-3xl flex flex-col-reverse md:flex-row justify-between md:items-start border rounded-md p-3 shadow-md'>
         <div className='mt-6 md:mt-0'>
           <h3 className='text-lg mb-3'>{project.name}</h3>
           <ul className='flex flex-wrap  gap-6 gap-y-3 text-sm'>
