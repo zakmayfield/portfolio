@@ -1,13 +1,17 @@
+'use client';
 import { ContentContainer, FadeIn, FullHeightImage } from '@/shared/components';
 import { ProjectType } from '@/shared/types';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 interface ProjectCardProps {
   project: ProjectType;
 }
 
 export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <FadeIn>
       <ContentContainer className='max-w-md md:max-w-3xl flex flex-col-reverse md:flex-row justify-between md:items-center border rounded-md p-3 shadow-md'>
@@ -25,13 +29,31 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 
         <Link
           href={`/projects/${project.slug}`}
-          className='w-full md:w-48 md:ml-6'
+          className='w-full md:w-48 md:ml-6 relative overflow-hidden rounded-md'
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <FullHeightImage
             image={project.image}
             altText={`${project.name} landing page`}
             rounded
           />
+
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-70'
+              >
+                <p className='text-white text-2xl tracking-wide font-thin'>
+                  view
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Link>
       </ContentContainer>
     </FadeIn>
