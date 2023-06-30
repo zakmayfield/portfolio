@@ -21,15 +21,13 @@ export const SandboxNav: FC<SandboxNavProps> = ({ session }) => {
       </ul>
 
       {/* sign in / avatar */}
-      <div>
-        {session?.user ? (
-          <UserAccountNavItem user={session?.user} />
-        ) : (
-          <Link href='/sign-up' className='border-2 rounded-md p-2'>
-            Sign In
-          </Link>
-        )}
-      </div>
+      {session?.user ? (
+        <UserAccountNavItem user={session.user} />
+      ) : (
+        <Link href='/sign-in' className='border-2 rounded-md p-2'>
+          Sign In
+        </Link>
+      )}
     </div>
   );
 };
