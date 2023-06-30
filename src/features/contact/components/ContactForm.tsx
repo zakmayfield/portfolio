@@ -33,6 +33,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
             onChange={onChange}
             className='w-full px-3 py-3 md:py-2 border border-gray-300 rounded-lg'
             required
+            disabled
           />
         </div>
       ))}
@@ -48,6 +49,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
           onChange={onChange}
           name='message'
           required
+          disabled
         />
       </div>
 
@@ -56,6 +58,7 @@ export const ContactForm: FC<ContactFormProps> = ({}) => {
           type='submit'
           variant='outline'
           className='w-full p-6 md:p-4 text-white bg-orange-600 rounded-lg hover:bg-orange-500 hover:text-white focus:outline-none focus:bg-orange-400'
+          disabled
         >
           Submit
         </Button>
