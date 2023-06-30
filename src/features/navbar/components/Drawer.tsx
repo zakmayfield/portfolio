@@ -1,13 +1,17 @@
 import { FC } from 'react';
 import { navigationItems } from '@/shared/constants';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { DrawerLinks } from './DrawerLinks';
 
 interface DrawerProps {
   isMenuOpen: boolean;
 }
 
 export const Drawer: FC<DrawerProps> = ({ isMenuOpen }) => {
+  const pathname = usePathname();
+
   const variants = {
     open: {
       height: 'auto',
@@ -25,15 +29,7 @@ export const Drawer: FC<DrawerProps> = ({ isMenuOpen }) => {
       variants={variants}
       animate={isMenuOpen ? 'open' : 'closed'}
     >
-      <ul className='flex flex-col gap-5 relative'>
-        {navigationItems.map((item, i) => (
-          <li key={item.title} className='last-of-type:pb-6'>
-            <Link href={item.slug} className='text-lg'>
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <DrawerLinks />
     </motion.div>
   );
 };
