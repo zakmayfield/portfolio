@@ -24,7 +24,10 @@ export const UserAccountNavItem: FC<UserAccountNavItemProps> = ({ user }) => {
         <UserAvatar user={user} />
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className='bg-white mt-3 rounded-md' align='end'>
+      <DropdownMenuContent
+        className='bg-white mt-3 rounded-md z-10'
+        align='end'
+      >
         <div className='flex flex-col items-start justify-start gap-1 p-2 space-y-1 leading-none'>
           {user.name && <p className='font-medium px-1'>{user.name}</p>}
           {user.email && <p className='text-sm px-1 font-thin'>{user.email}</p>}
@@ -45,7 +48,7 @@ export const UserAccountNavItem: FC<UserAccountNavItemProps> = ({ user }) => {
             onSelect={(event) => {
               event.preventDefault();
               signOut({
-                callbackUrl: `${window.location.origin}/sign-in`
+                callbackUrl: `${window.location.origin}/sign-in`,
               });
             }}
           >
