@@ -20,6 +20,12 @@ export const DrawerLinks: FC<DrawerLinksProps> = ({}) => {
           className='last-of-type:pb-6 text-lg'
         />
       ))}
+
+      <li className=''>
+        <Link href='/sign-in' className=''>
+          Sign In
+        </Link>
+      </li>
     </ul>
   );
 };

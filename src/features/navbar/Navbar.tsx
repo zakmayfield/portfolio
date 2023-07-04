@@ -7,12 +7,13 @@ import { ContentContainer, Logo, SocialLinks } from '@/shared/components';
 import { getAuthSession } from '@/lib/auth';
 import { Session } from 'next-auth/';
 import Link from 'next/link';
+import { useNavbarContext } from './context/NavbarContext';
 
-interface NavbarProps {
-  session: Session | null;
-}
+interface NavbarProps {}
 
-export const Navbar: FC<NavbarProps> = ({ session }) => {
+export const Navbar: FC<NavbarProps> = () => {
+  const { session } = useNavbarContext();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   let button: HTMLButtonElement | null = null;
@@ -55,13 +56,15 @@ export const Navbar: FC<NavbarProps> = ({ session }) => {
           <Logo className='text-6xl flex-1 text-center ml-0 ' />
           {/* render navbar links & theme switch @ desktop */}
           <NavbarLinks />
-          {/* login /avatar */}
+          {/* login / avatar */}
           {session?.user ? (
-            <UserAccountNavItem user={session.user} />
+            <div className='hidden md:inline-block ml-6 '>
+              <UserAccountNavItem user={session.user} />
+            </div>
           ) : (
             <Link
               href='/sign-in'
-              className='rounded-md px-2 py-1 border-2 ml-6'
+              className='rounded-md px-2 py-1 border-2 ml-6 hidden md:inline-block'
             >
               Sign In
             </Link>
@@ -72,7 +75,7 @@ export const Navbar: FC<NavbarProps> = ({ session }) => {
       </ContentContainer>
 
       {/* render drawer when menu is active */}
-      <Drawer isMenuOpen={isMenuOpen} />
+      <Drawer isMenuOpen={isMenuOpen} session={session} />
     </nav>
   );
 };
