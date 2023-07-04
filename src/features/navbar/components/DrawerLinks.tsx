@@ -3,11 +3,13 @@ import { NavLink } from '@/shared/components';
 import Link from 'next/link';
 import { navigationItems } from '@/shared/constants';
 import { usePathname } from 'next/navigation';
+import { useNavbarContext } from '../context/NavbarContext';
 
 interface DrawerLinksProps {}
 
 export const DrawerLinks: FC<DrawerLinksProps> = ({}) => {
   const pathname = usePathname();
+  const { session } = useNavbarContext();
 
   return (
     <ul className='flex flex-col gap-5 relative'>

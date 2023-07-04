@@ -1,6 +1,4 @@
 import { FC } from 'react';
-import { navigationItems } from '@/shared/constants';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { DrawerLinks } from './DrawerLinks';

@@ -4,15 +4,13 @@ import { FC, useState, useEffect, useRef } from 'react';
 import { MobileNavbarButton } from './components/MobileNavbarButton';
 import { Drawer, NavbarLinks, UserAccountNavItem } from './components';
 import { ContentContainer, Logo, SocialLinks } from '@/shared/components';
-import { getAuthSession } from '@/lib/auth';
-import { Session } from 'next-auth/';
 import Link from 'next/link';
-import { useNavbarContext } from './context/NavbarContext';
+import { useSessionContext } from '@/shared/context/SessionContext';
 
 interface NavbarProps {}
 
 export const Navbar: FC<NavbarProps> = () => {
-  const { session } = useNavbarContext();
+  const { session } = useSessionContext();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
