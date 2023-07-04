@@ -1,7 +1,5 @@
 'use client';
 import { FC } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { motion } from 'framer-motion';
 import { socialNavigationItems } from '@/shared/constants';
 import { cn } from '@/lib/utils';
 
@@ -21,6 +19,7 @@ export const SocialLinks: FC<SocialLinksProps> = ({
           key={id}
           href={link}
           aria-label='View my social sites'
+          target='_blank'
           className={
             hasBg
               ? `p-3 rounded-md bg-slate-100 hover:bg-slate-200 transition-colors`

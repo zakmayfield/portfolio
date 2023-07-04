@@ -1,6 +1,17 @@
+'use client';
+
 import { FC } from 'react';
-import { UserAvatar } from './UserAvatar';
 import { User } from 'next-auth/';
+import { UserAvatar } from './UserAvatar';
+import { DropdownMenu } from './DropdownMenu';
+import {
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@radix-ui/react-dropdown-menu';
+import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
 interface UserAccountNavItemProps {
   user: Pick<User, 'name' | 'image' | 'email'>;
@@ -8,8 +19,40 @@ interface UserAccountNavItemProps {
 
 export const UserAccountNavItem: FC<UserAccountNavItemProps> = ({ user }) => {
   return (
-    <div>
-      <UserAvatar user={user} />
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <UserAvatar user={user} />
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent className='bg-white mt-3 rounded-md' align='end'>
+        <div className='flex flex-col items-start justify-start gap-1 p-2 space-y-1 leading-none'>
+          {user.name && <p className='font-medium px-1'>{user.name}</p>}
+          {user.email && <p className='text-sm px-1 font-thin'>{user.email}</p>}
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuItem asChild>
+            <Link href='/sandbox'>Sandbox</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href='/sandbox/foo'>Foo</Link>
+          </DropdownMenuItem>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuItem
+            className='text-center border w-full p-1 rounded-md cursor-pointer'
+            onSelect={(event) => {
+              event.preventDefault();
+              signOut({
+                callbackUrl: `${window.location.origin}/sign-in`
+              });
+            }}
+          >
+            Sign Out
+          </DropdownMenuItem>
+        </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

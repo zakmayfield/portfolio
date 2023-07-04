@@ -9,7 +9,7 @@ export const MobileNavbarButton: FC<MobileNavbarButtonProps> = ({
   toggleMenu,
 }) => {
   return (
-    <button className='md:hidden flex items-center' onClick={toggleMenu}>
+    <button className='md:hidden flex items-center' id='mobile-nav-trigger' onClick={toggleMenu}>
       <HiOutlineMenuAlt3 className='text-3xl' />
     </button>
   );

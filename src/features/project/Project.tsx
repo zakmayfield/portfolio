@@ -28,7 +28,13 @@ export const Project: FC<ProjectProps> = ({ project }) => {
   return (
     <div className='p-6 pt-12'>
       <ContentContainer className='max-w-4xl flex flex-col gap-6'>
-        <h1 className='text-2xl tracking-wide'>{project.name}</h1>
+        <div className='flex items-center gap-3'>
+          <h1 className='text-2xl tracking-wide'>{project.name}</h1>
+          <span>-</span>
+          <a href={project.url} target='_blank' className='text-slate-700'>
+            view
+          </a>
+        </div>
 
         <div className='flex flex-col md:flex-row gap-6 justify-center items-start'>
           <FullHeightImage
