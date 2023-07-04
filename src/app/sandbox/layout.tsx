@@ -1,6 +1,6 @@
 import { ContentContainer } from '@/shared/components';
 import { getAuthSession } from '@/lib/auth';
-import { unbounded } from '../utils/fonts';
+import { unbounded } from '../../utils/fonts';
 import { SandboxNav } from '@/features/sandbox/components';
 
 export const metadata = {

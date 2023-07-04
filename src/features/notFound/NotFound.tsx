@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ContentContainer } from '@/shared/components';
-import { unbounded } from '@/app/utils/fonts';
+import { unbounded } from '@/utils/fonts';
 import Link from 'next/link';
 
 interface NotFoundProps {}
