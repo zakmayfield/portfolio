@@ -33,11 +33,15 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({
         className
       )}
     >
+      <p className='text-sm mb-6 border-b-8 border-b-orange-500'>
+        Please note this form is currently a work in progress
+      </p>
+
       <h1 className='mb-6 text-2xl font-unbounded'>Welcome back!</h1>
 
       <p className='mb-3'>Please sign in to continue</p>
 
-      <Button onClick={loginWithGoogle}>
+      <Button onClick={loginWithGoogle} disabled>
         {<Icons.google className='h-4 w-4 mr-2' />} Sign In with Google
       </Button>
     </div>
