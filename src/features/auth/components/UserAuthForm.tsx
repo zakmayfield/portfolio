@@ -41,7 +41,7 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({
 
       <p className='mb-3'>Please sign in to continue</p>
 
-      <Button onClick={loginWithGoogle} disabled>
+      <Button onClick={loginWithGoogle}>
         {<Icons.google className='h-4 w-4 mr-2' />} Sign In with Google
       </Button>
     </div>
