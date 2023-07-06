@@ -1,5 +1,6 @@
 import { Dashboard } from '@/features/dashboard';
 import { getAuthSession } from '@/lib/auth';
+import { SessionContextProvider } from '@/shared/context/SessionContext';
 import { redirect } from 'next/navigation';
 
 export const metadata = {
@@ -13,5 +14,10 @@ export default async function DashboardPage() {
     redirect('/sign-in');
   }
 
-  return <Dashboard />;
+  return (
+    // @ts-expect-error server component
+    <SessionContextProvider session={session}>
+      <Dashboard />
+    </SessionContextProvider>
+  );
 }

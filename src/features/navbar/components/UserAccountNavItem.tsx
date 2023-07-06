@@ -35,10 +35,7 @@ export const UserAccountNavItem: FC<UserAccountNavItemProps> = ({ user }) => {
           <DropdownMenuSeparator />
 
           <DropdownMenuItem asChild>
-            <Link href='/sandbox'>Sandbox</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href='/sandbox/foo'>Foo</Link>
+            <Link href='/dashboard'>Dashboard</Link>
           </DropdownMenuItem>
 
           <DropdownMenuSeparator />
