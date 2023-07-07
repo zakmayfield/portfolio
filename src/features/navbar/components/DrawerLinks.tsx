@@ -24,7 +24,7 @@ export const DrawerLinks: FC<DrawerLinksProps> = ({}) => {
         />
       ))}
 
-      {session?.user ? (
+      {!session?.user ? (
         <li className='mb-6 px-6'>
           <Link
             href='/sign-in'

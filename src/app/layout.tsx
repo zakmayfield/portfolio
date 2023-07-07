@@ -5,6 +5,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { getAuthSession } from '@/lib/auth';
 import { SessionContextProvider } from '@/shared/context/SessionContext';
+import Providers from '@/shared/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,17 +24,16 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-        {/* @ts-expect-error server component */}
-        <SessionContextProvider session={session}>
+        <Providers session={session}>
           <Navbar />
-        </SessionContextProvider>
 
-        {authModal}
+          {authModal}
 
-        <ContentContainer className='min-h-screen md:max-w-full'>
-          {children}
-        </ContentContainer>
-        <Footer />
+          <ContentContainer className='min-h-screen md:max-w-full'>
+            {children}
+          </ContentContainer>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

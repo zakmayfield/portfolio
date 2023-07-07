@@ -1,31 +1,82 @@
 'use client';
 
-import { ContentContainer } from '@/shared/components';
-import { useSessionContext } from '@/shared/context/SessionContext';
-import { FC } from 'react';
-import { unbounded } from '@/utils/fonts';
-import { Edit } from 'lucide-react';
+import { FC, useState } from 'react';
+import { Edit, Save, X } from 'lucide-react';
+import * as z from 'zod';
+import { useForm } from 'react-hook-form';
 import Image from 'next/image';
+import axios, { AxiosError } from 'axios';
+import { useMutation } from '@tanstack/react-query';
+import { Button, ContentContainer } from '@/shared/components';
+import { useSessionContext } from '@/shared/context/SessionContext';
+import { unbounded } from '@/utils/fonts';
+import {
+  EditUsernamePayload,
+  UsernameValidator,
+} from '@/lib/validators/username';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 
 interface DashboardProps {}
 
+type FormData = z.infer<typeof UsernameValidator>;
+
 export const Dashboard: FC<DashboardProps> = ({}) => {
+  const router = useRouter();
   const { session } = useSessionContext();
+  const [isEditing, setIsEditing] = useState(false);
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(UsernameValidator),
+    defaultValues: {
+      username: session?.user.username || '',
+    },
+  });
+
+  const { mutate: updateUsername, isLoading } = useMutation({
+    mutationFn: async ({ username }: FormData) => {
+      const payload: FormData = { username };
+
+      const { data } = await axios.patch('/api/username/', payload);
+      return data;
+    },
+    onError: (err) => {
+      if (err instanceof AxiosError) {
+        if (err.response?.status === 409) {
+          return;
+        }
+      }
+      setIsEditing(false);
+
+      console.log('----- error -----', err);
+
+      return;
+    },
+    onSuccess: () => {
+      setIsEditing(false);
+      router.refresh();
+    },
+  });
+
   return (
     <ContentContainer className={`max-w-2xl pt-6 ${unbounded.variable}`}>
       <h1 className='text-2xl font-unbounded mb-6'>
         Welcome, {session?.user.name}
       </h1>
 
-      <div className='flex items-center gap-12 w-full justify-between px-6'>
+      <div className='flex items-start gap-12 w-full justify-between px-6'>
         {/* https://robohash.org/52 */}
-        <div className='p-12'>
+        <div>
           {session?.user.image ? (
             <Image
               src={session.user.image}
               alt='profile picture'
-              width={100}
-              height={100}
+              width={150}
+              height={150}
               className='rounded-full'
             />
           ) : (
@@ -52,9 +103,56 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
 
           <div>
             <h3 className='font-thin mb-2'>Username</h3>
-            <div className='flex items-center gap-6'>
-              <p className='text-lg'>{session?.user.username}</p>
-              <Edit size={20} className='cursor-pointer' />
+            <div className='flex items-center justify-between gap-6'>
+              {isEditing ? (
+                <form
+                  action=''
+                  onSubmit={handleSubmit((e) => updateUsername(e))}
+                  className='flex-1 flex justify-between'
+                >
+                  <label htmlFor='username' className='sr-only'>
+                    Username
+                  </label>
+                  <input
+                    type='text'
+                    id='username'
+                    className='p-2'
+                    {...register('username')}
+                  />
+                  <div>
+                    <Button
+                      aria-label={isEditing ? 'save username' : 'edit username'}
+                      variant='ghost'
+                      onClick={() => {
+                        setIsEditing(false);
+                      }}
+                    >
+                      <X size={20} />
+                    </Button>
+
+                    <Button
+                      aria-label={isEditing ? 'save edit' : 'edit username'}
+                      variant='default'
+                    >
+                      <Save size={20} />
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <p className='text-lg'>{session?.user.username}</p>
+              )}
+
+              {!isEditing && (
+                <Button
+                  aria-label={isEditing ? 'save username' : 'edit username'}
+                  variant='default'
+                  onClick={() => {
+                    setIsEditing(true);
+                  }}
+                >
+                  <Edit size={20} />
+                </Button>
+              )}
             </div>
           </div>
         </div>
