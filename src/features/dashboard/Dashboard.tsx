@@ -1,10 +1,10 @@
 'use client';
 
-import { ContentContainer } from '@/shared/components';
+import { Button, ContentContainer } from '@/shared/components';
 import { useSessionContext } from '@/shared/context/SessionContext';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { unbounded } from '@/utils/fonts';
-import { Edit } from 'lucide-react';
+import { Edit, Save } from 'lucide-react';
 import Image from 'next/image';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
@@ -13,12 +13,13 @@ interface DashboardProps {}
 
 export const Dashboard: FC<DashboardProps> = ({}) => {
   const { session } = useSessionContext();
+  const [isEditing, setIsEditing] = useState(false);
 
-  const {} = useMutation({
-    mutationFn: async () => {
-      const { data } = await axios.post('/api/username');
-    },
-  });
+  // const {} = useMutation({
+  //   mutationFn: async () => {
+  //     const { data } = await axios.post('/api/username');
+  //   },
+  // });
 
   return (
     <ContentContainer className={`max-w-2xl pt-6 ${unbounded.variable}`}>
@@ -26,15 +27,15 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
         Welcome, {session?.user.name}
       </h1>
 
-      <div className='flex items-center gap-12 w-full justify-between px-6'>
+      <div className='flex items-start gap-12 w-full justify-between px-6'>
         {/* https://robohash.org/52 */}
-        <div className='p-12'>
+        <div>
           {session?.user.image ? (
             <Image
               src={session.user.image}
               alt='profile picture'
-              width={100}
-              height={100}
+              width={150}
+              height={150}
               className='rounded-full'
             />
           ) : (
@@ -61,9 +62,45 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
 
           <div>
             <h3 className='font-thin mb-2'>Username</h3>
-            <div className='flex items-center gap-6'>
-              <p className='text-lg'>{session?.user.username}</p>
-              <Edit size={20} className='cursor-pointer' />
+            <div className='flex items-center justify-between gap-6'>
+              {isEditing ? (
+                <form action='' className='flex-1 flex justify-between'>
+                  <label htmlFor='username' className='sr-only'>
+                    Username
+                  </label>
+                  <input
+                    type='text'
+                    id='username'
+                    name='username'
+                    className='p-2'
+                  />
+                  <Button
+                    aria-label={isEditing ? 'save username' : 'edit username'}
+                    variant='default'
+                    onClick={() => {
+                      console.log('edit clicked');
+                      setIsEditing(!isEditing);
+                    }}
+                  >
+                    <Save size={20} />
+                  </Button>
+                </form>
+              ) : (
+                <p className='text-lg'>{session?.user.username}</p>
+              )}
+
+              {!isEditing && (
+                <Button
+                  aria-label={isEditing ? 'save username' : 'edit username'}
+                  variant='default'
+                  onClick={() => {
+                    console.log('edit clicked');
+                    setIsEditing(!isEditing);
+                  }}
+                >
+                  <Edit size={20} />
+                </Button>
+              )}
             </div>
           </div>
         </div>
