@@ -11,7 +11,8 @@ export async function PATCH(req: Request) {
       return new Response('Unauthorized', { status: 401 });
     }
 
-    const body = await req.body;
+    const body = await req.json();
+
     const { username } = UsernameValidator.parse(body);
 
     const usernameIsTaken = await db.user.findFirst({
@@ -32,6 +33,8 @@ export async function PATCH(req: Request) {
         username,
       },
     });
+
+    return new Response('OK');
   } catch (error) {
     error;
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
-import { Edit, Save } from 'lucide-react';
+import { Edit, Save, X } from 'lucide-react';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
@@ -41,7 +41,7 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
     mutationFn: async ({ username }: FormData) => {
       const payload: FormData = { username };
 
-      const { data } = await axios.post('/api/username/', payload);
+      const { data } = await axios.patch('/api/username/', payload);
       return data;
     },
     onError: (err) => {
@@ -50,12 +50,14 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
           return;
         }
       }
+      setIsEditing(false);
 
       console.log('----- error -----', err);
 
       return;
     },
     onSuccess: () => {
+      setIsEditing(false);
       router.refresh();
     },
   });
@@ -114,15 +116,27 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
                   <input
                     type='text'
                     id='username'
-                    name='username'
                     className='p-2'
+                    {...register('username')}
                   />
-                  <Button
-                    aria-label={isEditing ? 'save edit' : 'edit username'}
-                    variant='default'
-                  >
-                    <Save size={20} />
-                  </Button>
+                  <div>
+                    <Button
+                      aria-label={isEditing ? 'save username' : 'edit username'}
+                      variant='ghost'
+                      onClick={() => {
+                        setIsEditing(false);
+                      }}
+                    >
+                      <X size={20} />
+                    </Button>
+
+                    <Button
+                      aria-label={isEditing ? 'save edit' : 'edit username'}
+                      variant='default'
+                    >
+                      <Save size={20} />
+                    </Button>
+                  </div>
                 </form>
               ) : (
                 <p className='text-lg'>{session?.user.username}</p>
@@ -133,7 +147,6 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
                   aria-label={isEditing ? 'save username' : 'edit username'}
                   variant='default'
                   onClick={() => {
-                    console.log('edit clicked');
                     setIsEditing(true);
                   }}
                 >
