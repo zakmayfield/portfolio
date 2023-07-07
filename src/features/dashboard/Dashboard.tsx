@@ -6,11 +6,20 @@ import { FC } from 'react';
 import { unbounded } from '@/utils/fonts';
 import { Edit } from 'lucide-react';
 import Image from 'next/image';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 
 interface DashboardProps {}
 
 export const Dashboard: FC<DashboardProps> = ({}) => {
   const { session } = useSessionContext();
+
+  const {} = useMutation({
+    mutationFn: async () => {
+      const { data } = await axios.post('/api/username');
+    },
+  });
+
   return (
     <ContentContainer className={`max-w-2xl pt-6 ${unbounded.variable}`}>
       <h1 className='text-2xl font-unbounded mb-6'>
