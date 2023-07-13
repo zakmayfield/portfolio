@@ -9,6 +9,7 @@ import type {
 
 import ChasersHome from '@/shared/assets/projects/chasers_home.png';
 import DominosHome from '@/shared/assets/projects/dominos_home.png';
+import OdinLogo from '@/shared/assets/projects/odin_logo.png';
 
 export const navigationItems: NavigationItemsType = [
   {
@@ -64,5 +65,15 @@ export const projects: ProjectsType = [
     description:
       'During my tenure at Dominos, I initially joined as a front end React developer contributing to the ongoing development and maintenance of the Dominos web app. My responsibilities involved maintaining and improving the existing user interfaces. The stack for this project was React and JavaScript',
     url: 'https://www.dominos.com',
+  },
+  {
+    id: 3,
+    name: 'Park Bench Solutions',
+    image: OdinLogo,
+    slug: 'pbs',
+    stack: ['JavaScript', 'React'],
+    description:
+      'I was a front end developer working on a React portal, built to use the extensive Odin API. During 1.5 years of time at Park Bench Solutions I picked up valuable experience utilizing JavaScript and React on a large production environment.',
+    url: 'https://rev.io/solutions/odin/',
   },
 ];
