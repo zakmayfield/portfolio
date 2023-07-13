@@ -28,7 +28,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
   return (
     <div className='p-6 pt-12'>
       <ContentContainer className='max-w-4xl flex flex-col gap-6'>
-        <div className='flex items-center gap-3'>
+        <div className='flex items-center gap-3 mb-6'>
           <h1 className='text-2xl tracking-wide'>{project.name}</h1>
           <span>-</span>
           <a href={project.url} target='_blank' className='text-slate-700'>
@@ -40,7 +40,9 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           <FullHeightImage
             image={project.image}
             altText={`${project.name} landing page`}
-            className='w-full md:w-2/3 h-[50vh] md:h-auto shadow-lg'
+            className={`w-full md:w-2/3 h-[50vh] md:h-auto shadow-lg ${
+              project.id === 3 ? 'py-24 px-6 flex justify-center' : ''
+            }`}
             rounded
           />
 
@@ -60,7 +62,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
           </div>
         </div>
 
-        <div className='p-6 indent-2 tracking-wide leading-relaxed text-lg max-w-[75ch] mx-auto'>
+        <div className='p-6 tracking-wide leading-relaxed text-lg max-w-[75ch] mx-auto'>
           {project.description}
         </div>
 

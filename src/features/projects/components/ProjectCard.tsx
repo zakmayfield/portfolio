@@ -29,13 +29,15 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 
         <Link
           href={`/projects/${project.slug}`}
-          className='w-full md:w-48 md:ml-6 relative overflow-hidden rounded-md'
+          className={`w-full md:w-48 md:ml-6 relative overflow-hidden rounded-md ${
+            project.id === 3 ? 'p-6' : ''
+          }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <FullHeightImage
             image={project.image}
-            altText={`${project.name} landing page`}
+            altText={`${project.name} website`}
             rounded
           />
 

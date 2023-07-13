@@ -24,7 +24,7 @@ export const RecentProjects: FC<RecentProjectsProps> = ({}) => {
 function ProjectsContainer() {
   return (
     <div className='flex flex-col gap-6 md:flex-row'>
-      {projects.map(({ id, name, image, slug }) => (
+      {projects.slice(0, 2).map(({ id, name, image, slug }) => (
         <ProjectSquare key={id} name={name} image={image} slug={slug} />
       ))}
     </div>
