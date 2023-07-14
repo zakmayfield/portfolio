@@ -1,6 +1,9 @@
+'use client';
+
 import { FC } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 interface NavLinkProps {
   slug: string;
@@ -18,10 +21,13 @@ export const NavLink: FC<NavLinkProps> = ({
   const isActive = pathname.split('/')[1] === slug;
 
   return (
-    <li className={cn('px-4 py-2', className)}>
-      <Link href={`/${slug}`} className={`${isActive ? 'text-gray-500' : ''}`}>
+    <motion.li className={cn(className)} whileHover={{ scale: 1.05 }}>
+      <Link
+        href={`/${slug}`}
+        className={`px-4 py-2 ${isActive ? 'text-gray-500' : ''}`}
+      >
         {title}
       </Link>
-    </li>
+    </motion.li>
   );
 };
