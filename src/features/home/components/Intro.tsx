@@ -8,11 +8,11 @@ interface IntroProps {}
 
 export const Intro: FC<IntroProps> = ({}) => {
   const { scrollYProgress } = useScroll();
-  const xPosAnim = useTransform(
-    scrollYProgress,
-    [0.6, 0.8, 0.9],
-    [0, 450, 900]
-  );
+  const isLargerThanTablet =
+    typeof window !== 'undefined' ? window.outerWidth > 765 : true;
+  const xPosAnim = useTransform(scrollYProgress, [0.8, 0.9, 1], [0, 450, 900]);
+
+  console.log(isLargerThanTablet);
   return (
     <FadeIn>
       <ContentContainer className='px-6 my-20 md:mt-28 md:max-w-4xl'>
