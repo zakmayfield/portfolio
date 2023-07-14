@@ -1,15 +1,31 @@
+'use client';
+
 import { ContentContainer, FadeIn } from '@/shared/components';
 import { FC, ReactNode } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface IntroProps {}
 
 export const Intro: FC<IntroProps> = ({}) => {
+  const { scrollYProgress } = useScroll();
+  const xPosAnim = useTransform(
+    scrollYProgress,
+    [0.6, 0.8, 0.9],
+    [0, 450, 900]
+  );
   return (
     <FadeIn>
       <ContentContainer className='px-6 my-20 md:mt-28 md:max-w-4xl'>
         <div className='flex-col max-w-[65ch] mx-auto'>
           <div className='md:border-b mb-6 md:pb-6'>
-            <h3 className='text-3xl md:text-4xl'>Thanks for stopping by</h3>
+            <motion.h3
+              style={{
+                translateX: xPosAnim,
+              }}
+              className='text-3xl md:text-4xl'
+            >
+              Thanks for stopping by
+            </motion.h3>
           </div>
 
           <div className='mb-6 mt-0 leading-relaxed tracking-wide md:px-6'>

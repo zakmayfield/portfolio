@@ -18,7 +18,7 @@ export const Hero: FC<HeroProps> = ({}) => {
     <div className='h-[80vh] bg-gradient-to-b from-orange-600 to-white flex items-center relative overflow-hidden'>
       <motion.div
         style={{ scale: scaleAnimation, rotate: '45deg' }}
-        className='w-[400px] h-[400px] md:w-[700px] md:h-[700px] rounded-[3rem]  absolute -top-32 bg-white -right-28 z-0'
+        className='w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-[3rem]  absolute -top-32 bg-white -right-28 z-0'
       />
       <ContentContainer className='md:max-w-6xl px-6 md:px-12 relative z-10'>
         <HeroContent />

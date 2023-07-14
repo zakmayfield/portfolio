@@ -5,7 +5,7 @@ interface HomeProps {}
 
 export const Home: FC<HomeProps> = ({}) => {
   return (
-    <main>
+    <main className='overflow-hidden'>
       <Hero />
       <Intro />
       <RecentProjects />
