@@ -1,12 +1,25 @@
+'use client';
 import { FC } from 'react';
 import { ContentContainer } from '@/shared/components';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface HeroProps {}
 
 export const Hero: FC<HeroProps> = ({}) => {
+  const { scrollYProgress } = useScroll();
+
+  const scaleAnimation = useTransform(
+    scrollYProgress,
+    [0, 0.4, 0.7],
+    [1, 2, 3]
+  );
+
   return (
     <div className='h-[80vh] bg-gradient-to-b from-orange-600 to-white flex items-center relative overflow-hidden'>
-      {/* <div className='w-[400px] h-[400px] md:w-[700px] md:h-[700px] rounded-[3rem]  absolute -top-32 bg-white -right-28 rotate-45 z-0' /> */}
+      <motion.div
+        style={{ scale: scaleAnimation, rotate: '45deg' }}
+        className='w-[400px] h-[400px] md:w-[700px] md:h-[700px] rounded-[3rem]  absolute -top-32 bg-white -right-28 z-0'
+      />
       <ContentContainer className='md:max-w-6xl px-6 md:px-12 relative z-10'>
         <HeroContent />
       </ContentContainer>
