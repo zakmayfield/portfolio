@@ -54,7 +54,6 @@ export const Project: FC<ProjectProps> = ({ project }) => {
             <h3 className='text-xl font-semibold'>Stack</h3>
             <ul className='mt-4 flex flex-wrap md:flex-col gap-6 md:gap-2 tracking-wide'>
               {project.stack.map((item) => (
-                // TODO: ecommerce experience | add challenges to description
                 <li
                   key={item}
                   className='px-2 py-1 border-2 bg-slate-100 text-slate-500 rounded-md'
@@ -67,8 +66,16 @@ export const Project: FC<ProjectProps> = ({ project }) => {
         </div>
 
         <div className='p-6 tracking-wide leading-relaxed text-lg max-w-[75ch] mx-auto'>
-          {project.description}
+          <h4 className='mb-6 text-xl'>Description</h4>
+          <p>{project.description}</p>
         </div>
+
+        {project.challenges && (
+          <div className='p-6 tracking-wide leading-relaxed text-lg max-w-[75ch] mx-auto'>
+            <h4 className='mb-6 text-xl'>Challenges</h4>
+            <p>{project.challenges}</p>
+          </div>
+        )}
 
         <div className='flex justify-end items-center'>
           <DropdownMenu>

@@ -19,8 +19,9 @@ export type ProjectType = {
   image: StaticImageData;
   slug: string;
   stack: string[];
-  description: string;
   url: string;
+  description: string;
+  challenges?: string | undefined;
 };
 
 export type SocialNavigationItemsType = SocialNavigationItemType[];
