@@ -63,7 +63,7 @@ export const projects: ProjectsType = [
     slug: 'dominos',
     stack: ['JavaScript', 'React', 'Storybook'],
     description:
-      'During my tenure at Dominos, I initially joined as a front end React developer contributing to the ongoing development and maintenance of the Dominos web app. My responsibilities involved maintaining and improving the existing user interfaces. The stack for this project was React and JavaScript',
+      "During my time at Dominos, I played a crucial role as a front end React developer, actively contributing to the continuous development and enhancement of the Dominos web app. My primary focus was on ensuring the smooth operation and improvement of user interfaces. Leveraging my skills in React and JavaScript, I actively participated in maintaining and elevating the app's functionality. I collaborated with Dominos UX/UI designers to ensure consistensy across the front end and delivered high quality, trusted code. The stack I utilized here was React, JavaScript, and Storybook",
     url: 'https://www.dominos.com',
   },
   {
@@ -71,9 +71,9 @@ export const projects: ProjectsType = [
     name: 'Park Bench Solutions',
     image: OdinLogo,
     slug: 'pbs',
-    stack: ['JavaScript', 'React'],
+    stack: ['JavaScript', 'React', 'React Query'],
     description:
-      'I was a front end developer working on a React portal, built to use the extensive Odin API. During 1.5 years of time at Park Bench Solutions I picked up valuable experience utilizing JavaScript and React on a large production environment.',
+      'During my 1.5 years at Park Bench Solutions, I served as a front-end developer, specializing in the development of a robust React portal that integrated seamlessly with the powerful Odin API. This experience allowed me to hone my skills in JavaScript and React within a dynamic and high-impact production environment. I was trusted to implement a state management system that could scale and grow along with the front end. The stack for this project is React, React Query, PHP',
     url: 'https://rev.io/solutions/odin/',
   },
 ];
