@@ -10,6 +10,7 @@ import type {
 import ChasersHome from '@/shared/assets/projects/chasers_home.png';
 import DominosHome from '@/shared/assets/projects/dominos_home.png';
 import OdinLogo from '@/shared/assets/projects/odin_logo.png';
+import BloomTech from '@/shared/assets/projects/bloomtech_home.png';
 
 export const navigationItems: NavigationItemsType = [
   {
@@ -18,7 +19,7 @@ export const navigationItems: NavigationItemsType = [
   },
   {
     slug: 'projects',
-    title: 'Projects',
+    title: 'Experience',
   },
   // {
   //   slug: 'contact',
@@ -43,6 +44,7 @@ export const projects: ProjectsType = [
   {
     id: 1,
     name: 'Chasers Fresh Juice',
+    title: 'Front End Developer',
     image: ChasersHome,
     slug: 'chasers-juice',
     stack: [
@@ -61,9 +63,10 @@ export const projects: ProjectsType = [
   {
     id: 2,
     name: 'Dominos',
+    title: 'Front End Developer',
     image: DominosHome,
     slug: 'dominos',
-    stack: ['JavaScript', 'React', 'Storybook'],
+    stack: ['JavaScript', 'React', 'CSS', 'Storybook'],
     url: 'https://www.dominos.com',
     description:
       "During my time at Dominos, I played a crucial role as a front end React developer, actively contributing to the continuous development and enhancement of the Dominos web app. My primary focus was on ensuring the smooth operation and improvement of user interfaces. Leveraging my skills in React and JavaScript, I actively participated in maintaining and elevating the app's functionality. I collaborated with Dominos backend developers and UX/UI designers to ensure consistensy across the front end and delivered high quality, trusted code. The stack I utilized here was React, JavaScript, and Storybook",
@@ -73,13 +76,27 @@ export const projects: ProjectsType = [
   {
     id: 3,
     name: 'Park Bench Solutions',
+    title: 'Front End Developer',
     image: OdinLogo,
     slug: 'pbs',
-    stack: ['JavaScript', 'React', 'React Query'],
+    stack: ['JavaScript', 'React', 'React Query', 'CSS'],
     url: 'https://rev.io/solutions/odin/',
     description:
       'During my 1.5 years at Park Bench Solutions, I served as a front-end developer, specializing in the development of a robust React portal that integrated seamlessly with the powerful Odin API. PORT. This experience allowed me to hone my skills in JavaScript and React within a dynamic and high-impact production environment. I was trusted to implement a state management system that could scale and grow along with the front end as well as porting the legacy AngularJS app to React. The stack for this project is React, React Query, PHP.',
     challenges:
       "Many challenges arose during my time at Park Bench Solutions, such as implementing a scalable state management system, as well as API integration and data handling. Integrating the Odin API required careful consideration of data types and handling, React Query's robust state management API was a great choice for this.",
+  },
+  {
+    id: 4,
+    name: 'Bloom Institute of Technology',
+    title: 'Mentor - Team Lead',
+    image: BloomTech,
+    slug: 'bloomtech',
+    stack: ['JavaScript', 'React', 'Node.js', 'CSS'],
+    url: 'https://www.bloomtech.com/',
+    description:
+      'After finishing the curriculum at Bloom Tech, I was offered a postion as a mentor and team lead working directly with students and staff. My duties as a team lead were based heavily on guidance and mentorship for new students, assisting them through the course material. The team lead position allowed me to explore my leadership skills, as well as reinforce my tech skills. The tech stack used during this mentorship included, HTML, CSS, JavaScript, React, and Node.js',
+    challenges:
+      'I found it both rewarding and difficult to mentor students through the curriculum, I needed a lot of in depth knowledge of how the code worked and the ability to explain why. I discovered the best teaching style was an adaptive one, each student learned in their own way, and in order for them to excell you had to discover how they learned.',
   },
 ];

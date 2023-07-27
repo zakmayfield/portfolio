@@ -16,6 +16,7 @@ export type SocialNavigationItemType = {
 export type ProjectType = {
   id: number;
   name: string;
+  title: string;
   image: StaticImageData;
   slug: string;
   stack: string[];
