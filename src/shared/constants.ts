@@ -20,10 +20,10 @@ export const navigationItems: NavigationItemsType = [
     slug: 'projects',
     title: 'Projects',
   },
-  {
-    slug: 'contact',
-    title: 'Contact',
-  },
+  // {
+  //   slug: 'contact',
+  //   title: 'Contact',
+  // },
 ];
 
 export const socialNavigationItems: SocialNavigationItemsType = [
