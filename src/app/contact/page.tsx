@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation';
 import { Contact } from '@/features/contact';
 
 export const metadata = {
@@ -5,5 +6,6 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  redirect('/');
   return <Contact />;
 }

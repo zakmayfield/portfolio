@@ -54,8 +54,9 @@ export const Navbar: FC<NavbarProps> = () => {
           <Logo className='text-6xl flex-1 text-center ml-0 ' />
           {/* render navbar links & theme switch @ desktop */}
           <NavbarLinks />
+
           {/* login / avatar */}
-          {session?.user ? (
+          {/* {session?.user ? (
             <div className='hidden md:inline-block ml-6 '>
               <UserAccountNavItem user={session.user} />
             </div>
@@ -66,7 +67,8 @@ export const Navbar: FC<NavbarProps> = () => {
             >
               Sign In
             </Link>
-          )}
+          )} */}
+
           {/* render menu button @ mobile and tablet */}
           <MobileNavbarButton toggleMenu={toggleMenu} />
         </div>
