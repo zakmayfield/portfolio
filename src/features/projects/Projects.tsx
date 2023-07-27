@@ -13,7 +13,7 @@ export const Projects: FC<ProjectProps> = () => {
   return (
     <div className='p-6 pt-12'>
       <ContentContainer className='max-w-4xl'>
-        <h1 className='text-2xl tracking-wide mb-6'>Projects</h1>
+        <h1 className='text-2xl tracking-wide mb-6'>Experience</h1>
 
         <div className='flex flex-col gap-6'>
           {projects.map((project) => (
